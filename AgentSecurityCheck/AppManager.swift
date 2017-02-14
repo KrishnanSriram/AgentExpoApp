@@ -9,5 +9,14 @@
 import Foundation
 
 class AppManager: NSObject {
-
+    
+    static let sharedInstance : AppManager = {
+        let instance = AppManager()
+        return instance
+    }()
+    
+    func loadAgentSecurityCheckItems() -> [AgentSecurityCheckItem]? {
+        let agentSecurityManager = AgentSecurityDataManager()
+        return agentSecurityManager.loadDataFromJSON()
+    }
 }

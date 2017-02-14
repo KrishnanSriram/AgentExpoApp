@@ -20,6 +20,13 @@
 		CB12A2D41E44C84C00FE9F0B /* ChoicesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB12A2D31E44C84C00FE9F0B /* ChoicesDataManager.swift */; };
 		CB12A2D61E44C87700FE9F0B /* ChoicesData.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB12A2D51E44C87600FE9F0B /* ChoicesData.plist */; };
 		CB12A2D81E45017F00FE9F0B /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB12A2D71E45017F00FE9F0B /* ResultsViewController.swift */; };
+		CB12A2DB1E45413D00FE9F0B /* QuestionaireTypeCVCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB12A2D91E45413D00FE9F0B /* QuestionaireTypeCVCellCollectionViewCell.swift */; };
+		CB12A2DC1E45413D00FE9F0B /* QuestionaireTypeCVCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB12A2DA1E45413D00FE9F0B /* QuestionaireTypeCVCellCollectionViewCell.xib */; };
+		CB12A31F1E5293EF00FE9F0B /* AgentSecurityCheck.json in Resources */ = {isa = PBXBuildFile; fileRef = CB12A31E1E5293EF00FE9F0B /* AgentSecurityCheck.json */; };
+		CB12A3211E52990900FE9F0B /* AgentSecurityDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB12A3201E52990900FE9F0B /* AgentSecurityDataManager.swift */; };
+		CB12A3241E52A90F00FE9F0B /* AgentSecurityCheckItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB12A3231E52A90F00FE9F0B /* AgentSecurityCheckItem.swift */; };
+		CB12A3261E52AA5000FE9F0B /* AgentSecurityCheckItemDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB12A3251E52AA5000FE9F0B /* AgentSecurityCheckItemDetails.swift */; };
+		CB12A3281E52AA5C00FE9F0B /* AgentSecurityCheckItemDetailsChoices.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB12A3271E52AA5C00FE9F0B /* AgentSecurityCheckItemDetailsChoices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +66,13 @@
 		CB12A2D31E44C84C00FE9F0B /* ChoicesDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoicesDataManager.swift; sourceTree = "<group>"; };
 		CB12A2D51E44C87600FE9F0B /* ChoicesData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ChoicesData.plist; sourceTree = "<group>"; };
 		CB12A2D71E45017F00FE9F0B /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		CB12A2D91E45413D00FE9F0B /* QuestionaireTypeCVCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionaireTypeCVCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		CB12A2DA1E45413D00FE9F0B /* QuestionaireTypeCVCellCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionaireTypeCVCellCollectionViewCell.xib; sourceTree = "<group>"; };
+		CB12A31E1E5293EF00FE9F0B /* AgentSecurityCheck.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AgentSecurityCheck.json; sourceTree = "<group>"; };
+		CB12A3201E52990900FE9F0B /* AgentSecurityDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentSecurityDataManager.swift; sourceTree = "<group>"; };
+		CB12A3231E52A90F00FE9F0B /* AgentSecurityCheckItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentSecurityCheckItem.swift; sourceTree = "<group>"; };
+		CB12A3251E52AA5000FE9F0B /* AgentSecurityCheckItemDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentSecurityCheckItemDetails.swift; sourceTree = "<group>"; };
+		CB12A3271E52AA5C00FE9F0B /* AgentSecurityCheckItemDetailsChoices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentSecurityCheckItemDetailsChoices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +123,8 @@
 		CB12A29C1E43F0C400FE9F0B /* AgentSecurityCheck */ = {
 			isa = PBXGroup;
 			children = (
+				CB12A3221E52A8F200FE9F0B /* Model */,
+				CB12A31E1E5293EF00FE9F0B /* AgentSecurityCheck.json */,
 				CB12A29D1E43F0C400FE9F0B /* AppDelegate.swift */,
 				CB12A2A11E43F0C400FE9F0B /* Main.storyboard */,
 				CB12A2A41E43F0C400FE9F0B /* Assets.xcassets */,
@@ -121,6 +137,9 @@
 				CB12A2D11E44C51100FE9F0B /* ColorManager.swift */,
 				CB12A2D31E44C84C00FE9F0B /* ChoicesDataManager.swift */,
 				CB12A2D51E44C87600FE9F0B /* ChoicesData.plist */,
+				CB12A2D91E45413D00FE9F0B /* QuestionaireTypeCVCellCollectionViewCell.swift */,
+				CB12A2DA1E45413D00FE9F0B /* QuestionaireTypeCVCellCollectionViewCell.xib */,
+				CB12A3201E52990900FE9F0B /* AgentSecurityDataManager.swift */,
 			);
 			path = AgentSecurityCheck;
 			sourceTree = "<group>";
@@ -141,6 +160,16 @@
 				CB12A2BF1E43F0C400FE9F0B /* Info.plist */,
 			);
 			path = AgentSecurityCheckUITests;
+			sourceTree = "<group>";
+		};
+		CB12A3221E52A8F200FE9F0B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB12A3231E52A90F00FE9F0B /* AgentSecurityCheckItem.swift */,
+				CB12A3251E52AA5000FE9F0B /* AgentSecurityCheckItemDetails.swift */,
+				CB12A3271E52AA5C00FE9F0B /* AgentSecurityCheckItemDetailsChoices.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +282,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB12A31F1E5293EF00FE9F0B /* AgentSecurityCheck.json in Resources */,
+				CB12A2DC1E45413D00FE9F0B /* QuestionaireTypeCVCellCollectionViewCell.xib in Resources */,
 				CB12A2A81E43F0C400FE9F0B /* LaunchScreen.storyboard in Resources */,
 				CB12A2A51E43F0C400FE9F0B /* Assets.xcassets in Resources */,
 				CB12A2A31E43F0C400FE9F0B /* Main.storyboard in Resources */,
@@ -285,9 +316,14 @@
 				CB12A2CE1E44A25700FE9F0B /* ChoicesTableViewController.swift in Sources */,
 				CB12A2D21E44C51100FE9F0B /* ColorManager.swift in Sources */,
 				CB12A2D81E45017F00FE9F0B /* ResultsViewController.swift in Sources */,
+				CB12A2DB1E45413D00FE9F0B /* QuestionaireTypeCVCellCollectionViewCell.swift in Sources */,
 				CB12A2CC1E43F19E00FE9F0B /* HomeViewController.swift in Sources */,
+				CB12A3211E52990900FE9F0B /* AgentSecurityDataManager.swift in Sources */,
 				CB12A29E1E43F0C400FE9F0B /* AppDelegate.swift in Sources */,
 				CB12A2D01E44BF0400FE9F0B /* AppManager.swift in Sources */,
+				CB12A3281E52AA5C00FE9F0B /* AgentSecurityCheckItemDetailsChoices.swift in Sources */,
+				CB12A3261E52AA5000FE9F0B /* AgentSecurityCheckItemDetails.swift in Sources */,
+				CB12A3241E52A90F00FE9F0B /* AgentSecurityCheckItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +574,7 @@
 				CB12A2C41E43F0C400FE9F0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CB12A2C51E43F0C400FE9F0B /* Build configuration list for PBXNativeTarget "AgentSecurityCheckTests" */ = {
 			isa = XCConfigurationList;
@@ -546,6 +583,7 @@
 				CB12A2C71E43F0C400FE9F0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CB12A2C81E43F0C400FE9F0B /* Build configuration list for PBXNativeTarget "AgentSecurityCheckUITests" */ = {
 			isa = XCConfigurationList;
@@ -554,6 +592,7 @@
 				CB12A2CA1E43F0C400FE9F0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

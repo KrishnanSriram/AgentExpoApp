@@ -12,7 +12,7 @@ class ChoicesTableViewController: UITableViewController {
 
     var viewDataType: QuestionaireType!
     private var dataManager: ChoicesDataManager!
-    var viewData: NSDictionary!
+    var viewData: AgentSecurityCheckItemDetails!
     var previousSelectedIndex: IndexPath?
     
     override func viewDidLoad() {
@@ -28,9 +28,8 @@ class ChoicesTableViewController: UITableViewController {
         self.navigationItem.leftBarButtonItem = leftBarButton
         
         self.dataManager = ChoicesDataManager()
-        self.viewData = self.dataManager.dataForChoice(choiceType: self.viewDataType)
         
-        self.title = self.viewData.object(forKey: "title") as? String
+        self.title = viewData.title
             //self.titleForView(viewType: self.viewDataType)
         self.formatNavigationBar(navigationBar: (self.navigationController?.navigationBar)!)
         
@@ -53,25 +52,24 @@ class ChoicesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return viewData.object(forKey: "question") as? String
+        return self.viewData.question
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let choicesArray: NSArray = self.viewData.object(forKey: "choices") as! NSArray
-        return choicesArray.count
+        return self.viewData.choices.count
+//        let choicesArray: NSArray = self.viewData.object(forKey: "choices") as! NSArray
+//        return choicesArray.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 165
+        return 145
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChoiceCell", for: indexPath)
         
-        let choicesArray: NSArray = self.viewData.object(forKey: "choices") as! NSArray
-        
-        let choice = choicesArray.object(at: indexPath.row) as! NSDictionary
+        let choice = self.viewData.choices[indexPath.row]
         cell.backgroundColor = UIColor.clear
         
         let cellBackgroundView = cell.viewWithTag(10)! as UIView
@@ -84,10 +82,10 @@ class ChoicesTableViewController: UITableViewController {
         cellBackgroundView.layer.shadowOpacity = 0.8
         
         let contentid_label = cell.viewWithTag(20) as! UILabel
-        contentid_label.text = choice.object(forKey: "choice_id") as? String
+        contentid_label.text = choice.choiceId
         
         let content_text_label = cell.viewWithTag(30) as! UILabel
-        content_text_label.text = choice.object(forKey: "choice") as? String
+        content_text_label.text = choice.choice
         content_text_label.numberOfLines = 0
         content_text_label.lineBreakMode = .byWordWrapping
         content_text_label.textAlignment = .left

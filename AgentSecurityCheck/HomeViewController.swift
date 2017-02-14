@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "SecurityCell"
+private let reuseIdentifier = "QuestionaireTitleCell"
 
 enum QuestionaireType: Int {
     case wireless
@@ -22,8 +22,15 @@ enum QuestionaireType: Int {
     case securitytraining
 }
 
+//class QuestionaireTypeCVCellDelegate: Pro
+protocol QuestionaireTypeCVCellProtocol {
+    func helpButtonTapped(sender: UIButton)
+    
+}
+
 class HomeViewController: UICollectionViewController, UIPopoverPresentationControllerDelegate {
 
+    var securityCheckItems: [AgentSecurityCheckItem] = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,10 +39,13 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
         self.navigationItem.rightBarButtonItem = rightBarButton
         
 
-        // Register cell classes
-//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+        self.collectionView!.register(UINib(nibName:"QuestionaireTypeCVCellCollectionViewCell",
+                                            bundle: nil),
+                                      forCellWithReuseIdentifier: "QuestionaireTitleCell")
+        
+        if let checkItems = AppManager.sharedInstance.loadAgentSecurityCheckItems() {
+            self.securityCheckItems = checkItems
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,11 +71,11 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return self.securityCheckItems.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! QuestionaireTypeCVCellCollectionViewCell
     
 //        self.imageForCell(indexPath: indexPath, cell: cell)
         self.labelTextForCell(indexPath: indexPath, cell: cell)
@@ -84,6 +94,8 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
         cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
         cell.layer.cornerRadius = 10.0
         
+        cell.delegate = self
+        
         return cell
     }
     
@@ -91,7 +103,8 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let popController = storyboard.instantiateViewController(withIdentifier: "ChoicesTableViewController") as! ChoicesTableViewController
             //ChoicesTableViewController(style: .grouped)
-        popController.viewDataType = QuestionaireType(rawValue: indexPath.row)
+        popController.viewData = self.securityCheckItems[indexPath.row].details
+//        popController.viewDataType = QuestionaireType(rawValue: indexPath.row)
         presentChoicesAsFormController(viewController: popController, selectedItem: indexPath)
         
         
@@ -113,7 +126,7 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
         popController.modalPresentationStyle = UIModalPresentationStyle.popover
         
         // set up the popover presentation controller
-        popController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.unknown
+        popController.popoverPresentationController?.permittedArrowDirections = .unknown
         popController.popoverPresentationController?.delegate = self
         popController.popoverPresentationController?.sourceView = self.view // button
         let rect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
@@ -149,30 +162,11 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
         }
     }
     
-    func labelTextForCell(indexPath: IndexPath, cell: UICollectionViewCell) {
-        let label: UILabel = cell.viewWithTag(10) as! UILabel
-        switch indexPath.row {
-        case 0:
-            label.text = "Wireless Security"
-        case 1:
-            label.text = "Security plan & policies"
-        case 2:
-            label.text = "Anti-Virus Software"
-        case 3:
-            label.text = "Accounts and Passwords audit"
-        case 4:
-            label.text = "Traffic monitor"
-        case 5:
-            label.text = "Storage media policies"
-        case 6:
-            label.text = "Password policies"
-        case 7:
-            label.text = "Mobile device security"
-        case 8:
-            label.text = "Security trainning"
-        default:
-            label.text = "Wireless Security"
-        }
+    func labelTextForCell(indexPath: IndexPath, cell: QuestionaireTypeCVCellCollectionViewCell) {
+        let label: UILabel = cell.headingLabel
+        label.text = self.securityCheckItems[indexPath.row].title
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
     }
     
     func resultsTextForCell(indexPath: IndexPath, cell: UICollectionViewCell) {
@@ -207,4 +201,10 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
         self.performSegue(withIdentifier: "result", sender: self)
     }
 
+}
+
+extension HomeViewController: QuestionaireTypeCVCellProtocol {
+    func helpButtonTapped(sender: UIButton) {
+        debugPrint("Help button tapped: \(sender.tag)")
+    }
 }
