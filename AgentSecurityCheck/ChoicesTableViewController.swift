@@ -13,7 +13,10 @@ class ChoicesTableViewController: UITableViewController {
     var viewDataType: QuestionaireType!
     private var dataManager: ChoicesDataManager!
     var viewData: AgentSecurityCheckItemDetails!
+    var questionId: String!
+    var choiceDelegate: ChoiceTableViewControllerDelegate!
     var previousSelectedIndex: IndexPath?
+    var rightBarButton1: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +24,10 @@ class ChoicesTableViewController: UITableViewController {
         
         let leftBarButton = UIBarButtonItem(image: UIImage(named: "close"), style: .plain, target: self, action: #selector(dismissView(sender:)))
         
-        let rightBarButton1 = UIBarButtonItem(image: UIImage(named: "save"), style: .plain, target: self, action: #selector(dismissView(sender:)))
+        rightBarButton1 = UIBarButtonItem(image: UIImage(named: "save"), style: .plain, target: self, action: #selector(saveButtonTapped(sender:)))
         let rightBarButton2 = UIBarButtonItem(image: UIImage(named: "help"), style: .plain, target: self, action: #selector(showHelpText(sender:)))
+        
+        rightBarButton1.isEnabled = false;
 
         self.navigationItem.rightBarButtonItems = [rightBarButton1, rightBarButton2]
         self.navigationItem.leftBarButtonItem = leftBarButton
@@ -57,8 +62,6 @@ class ChoicesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewData.choices.count
-//        let choicesArray: NSArray = self.viewData.object(forKey: "choices") as! NSArray
-//        return choicesArray.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -121,53 +124,9 @@ class ChoicesTableViewController: UITableViewController {
         content_text_label.textColor = UIColor.white
         
         self.previousSelectedIndex = indexPath
+        
+        self.rightBarButton1.isEnabled = true
     }
-
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     func formatNavigationBar(navigationBar: UINavigationBar) {
         navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -176,35 +135,42 @@ class ChoicesTableViewController: UITableViewController {
         navigationBar.shadowImage = UIImage()
     }
     
-    func titleForView(viewType: QuestionaireType) -> String {
-        var viewTitle: String = ""
-        /*
-         Move all of this data out to service layer
-        */
-        switch viewType.rawValue {
-        case 0:
-            viewTitle = "QUESTION ONE"
-        case 1:
-            viewTitle = "QUESTION TWO"
-        case 2:
-            viewTitle = "QUESTION THREE"
-        case 3:
-            viewTitle = "QUESTION FOUR"
-        case 4:
-            viewTitle = "QUESTION FIVE"
-        case 5:
-            viewTitle = "QUESTION SIX"
-        case 6:
-            viewTitle = "QUESTION SEVEN"
-        case 7:
-            viewTitle = "QUESTION EIGHT"
-        case 8:
-            viewTitle = "QUESTION NINE"
-        default:
-            viewTitle = ""
-        }
-        
-        return viewTitle
+//    func titleForView(viewType: QuestionaireType) -> String {
+//        var viewTitle: String = ""
+//        /*
+//         Move all of this data out to service layer
+//        */
+//        switch viewType.rawValue {
+//        case 0:
+//            viewTitle = "QUESTION ONE"
+//        case 1:
+//            viewTitle = "QUESTION TWO"
+//        case 2:
+//            viewTitle = "QUESTION THREE"
+//        case 3:
+//            viewTitle = "QUESTION FOUR"
+//        case 4:
+//            viewTitle = "QUESTION FIVE"
+//        case 5:
+//            viewTitle = "QUESTION SIX"
+//        case 6:
+//            viewTitle = "QUESTION SEVEN"
+//        case 7:
+//            viewTitle = "QUESTION EIGHT"
+//        case 8:
+//            viewTitle = "QUESTION NINE"
+//        default:
+//            viewTitle = ""
+//        }
+//        
+//        return viewTitle
+//    }
+    
+    func saveButtonTapped(sender: UIBarButtonItem) {
+        let choice = self.viewData.choices[(self.tableView.indexPathForSelectedRow?.row)!]
+        self.choiceDelegate.selectedChoice(choice: AgentSecurityCheckItemDetailsChoices(id: self.questionId,
+                                                                                        choice: choice.choiceId))
+        self.dismissView(sender: sender)
     }
     
     func dismissView(sender: UIBarButtonItem) {

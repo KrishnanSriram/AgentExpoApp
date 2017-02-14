@@ -22,15 +22,15 @@ enum QuestionaireType: Int {
     case securitytraining
 }
 
-//class QuestionaireTypeCVCellDelegate: Pro
-protocol QuestionaireTypeCVCellProtocol {
-    func helpButtonTapped(sender: UIButton)
-    
+protocol ChoiceTableViewControllerDelegate {
+    func selectedChoice(choice: AgentSecurityCheckItemDetailsChoices)
 }
 
 class HomeViewController: UICollectionViewController, UIPopoverPresentationControllerDelegate {
 
     var securityCheckItems: [AgentSecurityCheckItem] = []
+    var securityResonse: AgentSecurityResponse!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,6 +46,8 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
         if let checkItems = AppManager.sharedInstance.loadAgentSecurityCheckItems() {
             self.securityCheckItems = checkItems
         }
+        
+        securityResonse = AgentSecurityResponse()
     }
 
     override func didReceiveMemoryWarning() {
@@ -94,7 +96,6 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
         cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
         cell.layer.cornerRadius = 10.0
         
-        cell.delegate = self
         
         return cell
     }
@@ -104,7 +105,8 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
         let popController = storyboard.instantiateViewController(withIdentifier: "ChoicesTableViewController") as! ChoicesTableViewController
             //ChoicesTableViewController(style: .grouped)
         popController.viewData = self.securityCheckItems[indexPath.row].details
-//        popController.viewDataType = QuestionaireType(rawValue: indexPath.row)
+        popController.questionId = self.securityCheckItems[indexPath.row].id
+        popController.choiceDelegate = self
         presentChoicesAsFormController(viewController: popController, selectedItem: indexPath)
         
         
@@ -198,13 +200,30 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
     }
     
     func submitButtonPressed(sender: UIButton) {
-        self.performSegue(withIdentifier: "result", sender: self)
+        if self.canSubmit() == true {
+            self.performSegue(withIdentifier: "result", sender: self)
+        } else {
+            let controller = UIAlertController(title: "Submit Response", message: "Please answer all questions to submit your response", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            controller.addAction(okAction)
+            self.present(controller, animated: true, completion: nil)
+        }
+    }
+    
+    func canSubmit() -> Bool {
+        return self.securityCheckItems.count == self.securityResonse.choices.count
     }
 
 }
 
-extension HomeViewController: QuestionaireTypeCVCellProtocol {
-    func helpButtonTapped(sender: UIButton) {
-        debugPrint("Help button tapped: \(sender.tag)")
+extension HomeViewController: ChoiceTableViewControllerDelegate {
+    func selectedChoice(choice: AgentSecurityCheckItemDetailsChoices) {
+        self.securityResonse.addResponse(newChoice: choice)
+        
+        let selectedItem = self.collectionView?.indexPathsForSelectedItems?.first
+        let cell: QuestionaireTypeCVCellCollectionViewCell = self.collectionView?.cellForItem(at: selectedItem!) as! QuestionaireTypeCVCellCollectionViewCell
+        cell.statusLabel.text = "Answered"
     }
+    
+    
 }

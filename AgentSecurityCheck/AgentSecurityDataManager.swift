@@ -8,6 +8,12 @@
 
 import Foundation
 class AgentSecurityDataManager: NSObject {
+    var agentSecurityResponse: AgentSecurityResponse!
+    
+    override init() {
+        self.agentSecurityResponse = AgentSecurityResponse()
+    }
+    
     func loadDataFromJSON() -> [AgentSecurityCheckItem]? {
         let file = "AgentSecurityCheck"
         let path = Bundle.main.path(forResource: file, ofType: "json")
@@ -79,5 +85,7 @@ class AgentSecurityDataManager: NSObject {
         
         return nil
     }
+    
+    
     
 }

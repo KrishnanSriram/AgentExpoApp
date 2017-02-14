@@ -14,7 +14,6 @@ class QuestionaireTypeCVCellCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageview: UIImageView!
     @IBOutlet weak var statusLabel: UILabel!
 //    weak var delegate
-    var delegate: QuestionaireTypeCVCellProtocol?
     
     override func awakeFromNib() {
         super.awakeFromNib()

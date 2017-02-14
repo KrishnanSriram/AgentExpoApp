@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		024F1DAE1E53437B004C0320 /* AgentSecurityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F1DAD1E53437B004C0320 /* AgentSecurityResponse.swift */; };
 		CB12A29E1E43F0C400FE9F0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB12A29D1E43F0C400FE9F0B /* AppDelegate.swift */; };
 		CB12A2A31E43F0C400FE9F0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB12A2A11E43F0C400FE9F0B /* Main.storyboard */; };
 		CB12A2A51E43F0C400FE9F0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB12A2A41E43F0C400FE9F0B /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		024F1DAD1E53437B004C0320 /* AgentSecurityResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentSecurityResponse.swift; sourceTree = "<group>"; };
 		CB12A29A1E43F0C400FE9F0B /* AgentSecurityCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AgentSecurityCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB12A29D1E43F0C400FE9F0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB12A2A21E43F0C400FE9F0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				CB12A3231E52A90F00FE9F0B /* AgentSecurityCheckItem.swift */,
 				CB12A3251E52AA5000FE9F0B /* AgentSecurityCheckItemDetails.swift */,
 				CB12A3271E52AA5C00FE9F0B /* AgentSecurityCheckItemDetailsChoices.swift */,
+				024F1DAD1E53437B004C0320 /* AgentSecurityResponse.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				CB12A3211E52990900FE9F0B /* AgentSecurityDataManager.swift in Sources */,
 				CB12A29E1E43F0C400FE9F0B /* AppDelegate.swift in Sources */,
 				CB12A2D01E44BF0400FE9F0B /* AppManager.swift in Sources */,
+				024F1DAE1E53437B004C0320 /* AgentSecurityResponse.swift in Sources */,
 				CB12A3281E52AA5C00FE9F0B /* AgentSecurityCheckItemDetailsChoices.swift in Sources */,
 				CB12A3261E52AA5000FE9F0B /* AgentSecurityCheckItemDetails.swift in Sources */,
 				CB12A3241E52A90F00FE9F0B /* AgentSecurityCheckItem.swift in Sources */,
