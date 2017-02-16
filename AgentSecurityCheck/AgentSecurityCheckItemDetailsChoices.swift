@@ -11,9 +11,16 @@ import Foundation
 class AgentSecurityCheckItemDetailsChoices: NSObject {
     var choiceId: String!
     var choice: String!
+    var weight: String!
     
     init(id: String, choice: String) {
         self.choiceId = id
         self.choice = choice
+    }
+    
+    init(id: String, choice: String, weight: String) {
+        self.choiceId = id
+        self.choice = choice
+        self.weight = weight
     }
 }

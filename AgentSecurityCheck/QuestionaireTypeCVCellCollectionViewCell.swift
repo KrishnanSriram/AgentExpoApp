@@ -13,11 +13,14 @@ class QuestionaireTypeCVCellCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var imageview: UIImageView!
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var bgView: UIView!
 //    weak var delegate
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
+    
 }

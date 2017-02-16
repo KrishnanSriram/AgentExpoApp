@@ -80,7 +80,9 @@ class AgentSecurityDataManager: NSObject {
         if let choiceItem = choice {
             let choice = choiceItem.object(forKey: "choice") as! String
             let choice_id = choiceItem.object(forKey: "id") as! String
-            return AgentSecurityCheckItemDetailsChoices(id: choice_id, choice: choice)
+            let weight = choiceItem.object(forKey: "weight") as! String
+            
+            return AgentSecurityCheckItemDetailsChoices(id: choice_id, choice: choice, weight: weight)
         }
         
         return nil

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		024F1DAE1E53437B004C0320 /* AgentSecurityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F1DAD1E53437B004C0320 /* AgentSecurityResponse.swift */; };
+		024F1DB01E539CF1004C0320 /* SFGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F1DAF1E539CF1004C0320 /* SFGaugeView.swift */; };
 		CB12A29E1E43F0C400FE9F0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB12A29D1E43F0C400FE9F0B /* AppDelegate.swift */; };
 		CB12A2A31E43F0C400FE9F0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB12A2A11E43F0C400FE9F0B /* Main.storyboard */; };
 		CB12A2A51E43F0C400FE9F0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB12A2A41E43F0C400FE9F0B /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		024F1DAD1E53437B004C0320 /* AgentSecurityResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentSecurityResponse.swift; sourceTree = "<group>"; };
+		024F1DAF1E539CF1004C0320 /* SFGaugeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFGaugeView.swift; sourceTree = "<group>"; };
 		CB12A29A1E43F0C400FE9F0B /* AgentSecurityCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AgentSecurityCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB12A29D1E43F0C400FE9F0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB12A2A21E43F0C400FE9F0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 		CB12A29C1E43F0C400FE9F0B /* AgentSecurityCheck */ = {
 			isa = PBXGroup;
 			children = (
+				024F1DAF1E539CF1004C0320 /* SFGaugeView.swift */,
 				CB12A3221E52A8F200FE9F0B /* Model */,
 				CB12A31E1E5293EF00FE9F0B /* AgentSecurityCheck.json */,
 				CB12A29D1E43F0C400FE9F0B /* AppDelegate.swift */,
@@ -324,6 +327,7 @@
 				CB12A3211E52990900FE9F0B /* AgentSecurityDataManager.swift in Sources */,
 				CB12A29E1E43F0C400FE9F0B /* AppDelegate.swift in Sources */,
 				CB12A2D01E44BF0400FE9F0B /* AppManager.swift in Sources */,
+				024F1DB01E539CF1004C0320 /* SFGaugeView.swift in Sources */,
 				024F1DAE1E53437B004C0320 /* AgentSecurityResponse.swift in Sources */,
 				CB12A3281E52AA5C00FE9F0B /* AgentSecurityCheckItemDetailsChoices.swift in Sources */,
 				CB12A3261E52AA5000FE9F0B /* AgentSecurityCheckItemDetails.swift in Sources */,

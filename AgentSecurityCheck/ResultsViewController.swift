@@ -9,6 +9,39 @@
 import UIKit
 
 class ResultsViewController: UIViewController {
+    
+    @IBOutlet weak var topTachometer: SFGaugeView!
+    var percentageValue: Int!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        self.title = "Results"
+        
+        self.topTachometer.backgroundColor = UIColor.white
+        self.topTachometer.bgColor = UIColor(red: CGFloat(249 / 255.0), green: CGFloat(203 / 255.0), blue: CGFloat(0 / 255.0), alpha: CGFloat(1))
+        self.topTachometer.needleColor = UIColor(red: CGFloat(247 / 255.0), green: CGFloat(164 / 255.0), blue: CGFloat(2 / 255.0), alpha: CGFloat(1))
+        self.topTachometer.isHideLevel = true
+        self.topTachometer.minImage = "bad"
+        self.topTachometer.maxImage = "good"
+        
+        self.topTachometer.isAutoAdjustImageColors = true
+        self.topTachometer.currentLevel = 3 //percentageValue
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+}
+
+
+/*
+class ResultsViewController: UIViewController {
 
     @IBOutlet weak var needleImageView: UIImageView!
     private var angle: CGFloat!
@@ -40,14 +73,13 @@ class ResultsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+
     func showResults(value: CGFloat) {
-        //UIView.animate(withDuration: 3) {
-            let transform = CGAffineTransform(rotationAngle: CGFloat(M_PI / 180) * self.angle)
-//            self.setAnchorPoint(anchorPoint: self.anchorPoint, view: self.needleImageView)
-            self.needleImageView.transform = transform
-            self.view.layoutIfNeeded()
-//        }
+        let transform = CGAffineTransform(rotationAngle: CGFloat(M_PI / 180) * self.angle)
+        self.needleImageView.transform = transform
+        self.view.layoutIfNeeded()
     }
+    
     
     func setAnchorPoint(anchorPoint: CGPoint, view: UIView) {
         var newPoint = CGPoint(x:view.bounds.size.width * anchorPoint.x, y:view.bounds.size.height * anchorPoint.y)
@@ -69,5 +101,5 @@ class ResultsViewController: UIViewController {
         view.layer.anchorPoint = anchorPoint;
     }
     
-
 }
+*/

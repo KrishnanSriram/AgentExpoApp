@@ -38,7 +38,8 @@ class ChoicesTableViewController: UITableViewController {
             //self.titleForView(viewType: self.viewDataType)
         self.formatNavigationBar(navigationBar: (self.navigationController?.navigationBar)!)
         
-        self.view.backgroundColor = UIColor.white
+        self.setupGradientBGView()
+//        self.view.backgroundColor = UIColor.white
             //ColorManager.sharedInstance.questionsViewBGColor()
         
 
@@ -54,6 +55,12 @@ class ChoicesTableViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.font = UIFont(name: "Futura", size: 16)
+        header.textLabel?.textColor = UIColor.black
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -76,7 +83,7 @@ class ChoicesTableViewController: UITableViewController {
         cell.backgroundColor = UIColor.clear
         
         let cellBackgroundView = cell.viewWithTag(10)! as UIView
-        cellBackgroundView.backgroundColor = UIColor.white
+        cellBackgroundView.backgroundColor = UIColor.black
             //UIColor(red: 153/255, green: 255/255, blue: 153/255, alpha: 1)
         cellBackgroundView.layer.cornerRadius = 4
         cellBackgroundView.layer.masksToBounds = false
@@ -86,9 +93,13 @@ class ChoicesTableViewController: UITableViewController {
         
         let contentid_label = cell.viewWithTag(20) as! UILabel
         contentid_label.text = choice.choiceId
+        contentid_label.font = UIFont(name: "Futura", size: 16)
+        contentid_label.textColor = UIColor.white
         
         let content_text_label = cell.viewWithTag(30) as! UILabel
         content_text_label.text = choice.choice
+        content_text_label.font = UIFont(name: "Futura", size: 16)
+        content_text_label.textColor = UIColor.white
         content_text_label.numberOfLines = 0
         content_text_label.lineBreakMode = .byWordWrapping
         content_text_label.textAlignment = .left
@@ -103,25 +114,25 @@ class ChoicesTableViewController: UITableViewController {
             let cell = tableView.cellForRow(at: previousSelectedIndex!)! as UITableViewCell
             
             let cellBackgroundView = cell.viewWithTag(10)! as UIView
-            cellBackgroundView.backgroundColor = UIColor.white
+            cellBackgroundView.backgroundColor = UIColor.black
             
             let contentid_label = cell.viewWithTag(20) as! UILabel
-            contentid_label.textColor = UIColor.black
+            contentid_label.textColor = UIColor.white
             
             let content_text_label = cell.viewWithTag(30) as! UILabel
-            content_text_label.textColor = UIColor.black
+            content_text_label.textColor = UIColor.white
         }
         
         let cell = tableView.cellForRow(at: indexPath)! as UITableViewCell
         
         let cellBackgroundView = cell.viewWithTag(10)! as UIView
-        cellBackgroundView.backgroundColor = UIColor.black
+        cellBackgroundView.backgroundColor = UIColor.yellow
         
         let contentid_label = cell.viewWithTag(20) as! UILabel
-        contentid_label.textColor = UIColor.white
+        contentid_label.textColor = UIColor.red
         
         let content_text_label = cell.viewWithTag(30) as! UILabel
-        content_text_label.textColor = UIColor.white
+        content_text_label.textColor = UIColor.red
         
         self.previousSelectedIndex = indexPath
         
@@ -135,41 +146,12 @@ class ChoicesTableViewController: UITableViewController {
         navigationBar.shadowImage = UIImage()
     }
     
-//    func titleForView(viewType: QuestionaireType) -> String {
-//        var viewTitle: String = ""
-//        /*
-//         Move all of this data out to service layer
-//        */
-//        switch viewType.rawValue {
-//        case 0:
-//            viewTitle = "QUESTION ONE"
-//        case 1:
-//            viewTitle = "QUESTION TWO"
-//        case 2:
-//            viewTitle = "QUESTION THREE"
-//        case 3:
-//            viewTitle = "QUESTION FOUR"
-//        case 4:
-//            viewTitle = "QUESTION FIVE"
-//        case 5:
-//            viewTitle = "QUESTION SIX"
-//        case 6:
-//            viewTitle = "QUESTION SEVEN"
-//        case 7:
-//            viewTitle = "QUESTION EIGHT"
-//        case 8:
-//            viewTitle = "QUESTION NINE"
-//        default:
-//            viewTitle = ""
-//        }
-//        
-//        return viewTitle
-//    }
-    
     func saveButtonTapped(sender: UIBarButtonItem) {
         let choice = self.viewData.choices[(self.tableView.indexPathForSelectedRow?.row)!]
-        self.choiceDelegate.selectedChoice(choice: AgentSecurityCheckItemDetailsChoices(id: self.questionId,
-                                                                                        choice: choice.choiceId))
+        let checkItemDetails = AgentSecurityCheckItemDetailsChoices(id: self.questionId,
+                                                                    choice: choice.choiceId,
+                                                                    weight: choice.weight)
+        self.choiceDelegate.selectedChoice(choice: checkItemDetails)
         self.dismissView(sender: sender)
     }
     
@@ -179,6 +161,18 @@ class ChoicesTableViewController: UITableViewController {
     
     func showHelpText(sender: UIBarButtonItem) {
         debugPrint("Show help")
+    }
+    
+    func setupGradientBGView() {
+        let collectionGradient = CAGradientLayer()
+        collectionGradient.bounds = self.view.bounds
+        collectionGradient.anchorPoint = CGPoint.zero
+        let colorTop =  UIColor(red: 255.0/255.0, green: 149.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
+        let colorBottom = UIColor(red: 255.0/255.0, green: 94.0/255.0, blue: 58.0/255.0, alpha: 1.0).cgColor
+        collectionGradient.colors = [colorTop, colorBottom]
+        let vv = UIView()
+        self.tableView!.backgroundView = vv
+        self.tableView!.backgroundView!.layer.insertSublayer(collectionGradient, at: 0)
     }
 
 }

@@ -47,7 +47,12 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
             self.securityCheckItems = checkItems
         }
         
+        self.title = "Check your technology score."
+        
         securityResonse = AgentSecurityResponse()
+        
+        self.setupGradientBGView()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,13 +87,13 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
 //        self.imageForCell(indexPath: indexPath, cell: cell)
         self.labelTextForCell(indexPath: indexPath, cell: cell)
         
-        cell.contentView.backgroundColor = UIColor.white
+//        cell.contentView.backgroundColor = UIColor.white
         cell.contentView.layer.cornerRadius = 2.0
         cell.contentView.layer.borderWidth = 1.0
-        cell.contentView.layer.borderColor = UIColor.clear.cgColor
+        cell.contentView.layer.borderColor = UIColor.yellow.cgColor
         cell.contentView.layer.masksToBounds = true
         
-        cell.layer.shadowColor = UIColor.lightGray.cgColor
+        cell.layer.shadowColor = UIColor.yellow.cgColor
         cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
         cell.layer.shadowRadius = 3.0
         cell.layer.shadowOpacity = 1.0
@@ -167,6 +172,7 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
     func labelTextForCell(indexPath: IndexPath, cell: QuestionaireTypeCVCellCollectionViewCell) {
         let label: UILabel = cell.headingLabel
         label.text = self.securityCheckItems[indexPath.row].title
+        label.font = UIFont(name: "Futura", size: 16)
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
     }
@@ -201,7 +207,11 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
     
     func submitButtonPressed(sender: UIButton) {
         if self.canSubmit() == true {
-            self.performSegue(withIdentifier: "result", sender: self)
+            let percentage = self.calculateScoreFromSelectedChoices(selectedChoice: self.securityResonse)
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let resultsController = storyboard.instantiateViewController(withIdentifier: "result") as! ResultsViewController
+            resultsController.percentageValue = percentage
+            self.navigationController?.pushViewController(resultsController, animated: true)
         } else {
             let controller = UIAlertController(title: "Submit Response", message: "Please answer all questions to submit your response", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -213,6 +223,33 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
     func canSubmit() -> Bool {
         return self.securityCheckItems.count == self.securityResonse.choices.count
     }
+    
+    private func calculateScoreFromSelectedChoices(selectedChoice: AgentSecurityResponse) -> Int {
+        var totalWeight = 0
+        var percentage = 0
+        
+        for choice: AgentSecurityCheckItemDetailsChoices in selectedChoice.choices {
+            let weight = Int(choice.weight)
+            totalWeight = totalWeight + weight!
+        }
+        if totalWeight > 0 {
+            percentage = (totalWeight*10)/(selectedChoice.choices.count * 100)
+        }
+        
+        return percentage
+    }
+    
+    func setupGradientBGView() {
+        let collectionGradient = CAGradientLayer()
+        collectionGradient.bounds = self.view.bounds
+        collectionGradient.anchorPoint = CGPoint.zero
+        let colorTop =  UIColor(red: 255.0/255.0, green: 149.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
+        let colorBottom = UIColor(red: 255.0/255.0, green: 94.0/255.0, blue: 58.0/255.0, alpha: 1.0).cgColor
+        collectionGradient.colors = [colorTop, colorBottom]
+        let vv = UIView()
+        self.collectionView!.backgroundView = vv
+        self.collectionView!.backgroundView!.layer.insertSublayer(collectionGradient, at: 0)
+    }
 
 }
 
@@ -223,6 +260,7 @@ extension HomeViewController: ChoiceTableViewControllerDelegate {
         let selectedItem = self.collectionView?.indexPathsForSelectedItems?.first
         let cell: QuestionaireTypeCVCellCollectionViewCell = self.collectionView?.cellForItem(at: selectedItem!) as! QuestionaireTypeCVCellCollectionViewCell
         cell.statusLabel.text = "Answered"
+        cell.statusLabel.isHidden = false
     }
     
     

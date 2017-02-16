@@ -21,8 +21,10 @@ class AgentSecurityResponse: NSObject {
         for choice:AgentSecurityCheckItemDetailsChoices in choices {
             if choice.choiceId.lowercased() == newChoice.choiceId.lowercased() {
                 choice.choice = newChoice.choice
+                return
             }
         }
+        choices.append(newChoice)
     }
     
     func clearAllChoices() {
