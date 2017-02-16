@@ -53,6 +53,10 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
         
 //        self.setupGradientBGView()
         self.setupBGImage()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(resetResponse),
+                                               name: NSNotification.Name(rawValue: "ResetQuizNotification"),
+                                               object: nil)
 
     }
 
@@ -60,16 +64,6 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 
@@ -91,6 +85,8 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
     
 //        self.imageForCell(indexPath: indexPath, cell: cell)
         self.labelTextForCell(indexPath: indexPath, cell: cell)
+        let label: UILabel = cell.viewWithTag(30) as! UILabel
+        label.isHidden = true
         
         cell.contentView.backgroundColor = UIColor.white
         cell.contentView.layer.cornerRadius = 2.0
@@ -261,6 +257,11 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
         self.collectionView!.backgroundView = vv
         self.collectionView!.backgroundView!.layer.insertSublayer(collectionGradient, at: 0)
     }
+    
+    func resetResponse() {
+        self.securityResonse = AgentSecurityResponse()
+        self.collectionView?.reloadData()
+    }
 
 }
 
@@ -271,6 +272,7 @@ extension HomeViewController: ChoiceTableViewControllerDelegate {
         let selectedItem = self.collectionView?.indexPathsForSelectedItems?.first
         let cell: QuestionaireTypeCVCellCollectionViewCell = self.collectionView?.cellForItem(at: selectedItem!) as! QuestionaireTypeCVCellCollectionViewCell
         cell.statusLabel.text = "Answered"
+        cell.statusLabel.textColor = UIColor.blue
         cell.statusLabel.isHidden = false
     }
     

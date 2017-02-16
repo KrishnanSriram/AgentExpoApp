@@ -125,8 +125,8 @@ class ChoicesTableViewController: UITableViewController {
         
         let cell = tableView.cellForRow(at: indexPath)! as UITableViewCell
         
-        let cellBackgroundView = cell.viewWithTag(10)! as UIView
-        cellBackgroundView.backgroundColor = UIColor.yellow
+//        let cellBackgroundView = cell.viewWithTag(10)! as UIView
+//        cellBackgroundView.backgroundColor = UIColor.yellow
         
         let contentid_label = cell.viewWithTag(20) as! UILabel
         contentid_label.textColor = UIColor.red
