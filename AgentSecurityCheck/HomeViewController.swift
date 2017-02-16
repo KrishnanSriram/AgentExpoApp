@@ -118,6 +118,23 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
         
     }
     
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            self.checkToReset()
+        }
+    }
+    
+    private func checkToReset() {
+        let alertController = UIAlertController(title: "Start over again?", message: "Do you want to restart quiz?", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (alert) in
+            self.resetResponse()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     // UIPopoverPresentationControllerDelegate method
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
         // Force popover style
