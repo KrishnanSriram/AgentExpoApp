@@ -13,13 +13,13 @@ class QuestionaireTypeCVCellCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var imageview: UIImageView!
     @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var bgView: UIView!
+//    @IBOutlet weak var bgView: UIView!
 //    weak var delegate
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         contentView.layer.cornerRadius = 5
-        contentView.layer.borderColor = UIColor.black.cgColor
+//        contentView.layer.borderColor = UIColor.black.cgColor
         contentView.layer.borderWidth = 1
         contentView.layer.shouldRasterize = true
         contentView.layer.rasterizationScale = UIScreen.main.scale

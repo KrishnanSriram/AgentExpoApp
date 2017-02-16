@@ -81,6 +81,10 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.securityCheckItems.count
     }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSize(width: 297, height: 209);
+    }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! QuestionaireTypeCVCellCollectionViewCell
@@ -88,19 +92,19 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
 //        self.imageForCell(indexPath: indexPath, cell: cell)
         self.labelTextForCell(indexPath: indexPath, cell: cell)
         
-//        cell.contentView.backgroundColor = UIColor.white
-//        cell.contentView.layer.cornerRadius = 2.0
-//        cell.contentView.layer.borderWidth = 1.0
-//        cell.contentView.layer.borderColor = UIColor.yellow.cgColor
-//        cell.contentView.layer.masksToBounds = true
+        cell.contentView.backgroundColor = UIColor.white
+        cell.contentView.layer.cornerRadius = 2.0
+        cell.contentView.layer.borderWidth = 1.0
+        cell.contentView.layer.borderColor = UIColor.yellow.cgColor
+        cell.contentView.layer.masksToBounds = true
         
-//        cell.layer.shadowColor = UIColor.yellow.cgColor
-//        cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
-//        cell.layer.shadowRadius = 3.0
-//        cell.layer.shadowOpacity = 1.0
-//        cell.layer.masksToBounds = false
-//        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
-//        cell.layer.cornerRadius = 10.0
+        cell.layer.shadowColor = UIColor.red.cgColor
+        cell.layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        cell.layer.shadowRadius = 3.0
+        cell.layer.shadowOpacity = 1.0
+        cell.layer.masksToBounds = false
+        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
+        cell.layer.cornerRadius = 10.0
         
         
         return cell

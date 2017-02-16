@@ -14,56 +14,12 @@
         <scene sceneID="AEK-js-icw">
             <objects>
                 <collectionViewController id="B5O-DK-cuQ" customClass="HomeViewController" customModule="AgentSecurityCheck" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" id="iRP-XS-uCj">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" id="iRP-XS-uCj">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewLayout key="collectionViewLayout" id="3Hm-yH-rtn" customClass="CircularCollectionViewLayout" customModule="AgentSecurityCheck" customModuleProvider="target"/>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SecurityCell" id="w92-tb-pco">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xq-3t-icp">
-                                            <rect key="frame" x="16" y="16" width="34" height="102"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="30" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIr-Ei-eOR">
-                                            <rect key="frame" x="16" y="181" width="34" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="1Qx-Wk-0YI"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" tag="20" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XuT-7o-jsg">
-                                            <rect key="frame" x="99" y="111" width="99" height="44"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="44" id="oqC-EU-LuS"/>
-                                            </constraints>
-                                        </imageView>
-                                    </subviews>
-                                </view>
-                                <constraints>
-                                    <constraint firstAttribute="bottomMargin" secondItem="NIr-Ei-eOR" secondAttribute="bottom" constant="14" id="4lM-6L-By7"/>
-                                    <constraint firstItem="XuT-7o-jsg" firstAttribute="top" secondItem="6xq-3t-icp" secondAttribute="bottom" constant="8" id="9Wp-rl-ZJe"/>
-                                    <constraint firstItem="NIr-Ei-eOR" firstAttribute="top" secondItem="XuT-7o-jsg" secondAttribute="bottom" constant="11" id="Nz5-oi-wxr"/>
-                                    <constraint firstItem="XuT-7o-jsg" firstAttribute="leading" secondItem="w92-tb-pco" secondAttribute="leadingMargin" constant="91" id="TNz-Es-qVG"/>
-                                    <constraint firstItem="NIr-Ei-eOR" firstAttribute="leading" secondItem="w92-tb-pco" secondAttribute="leadingMargin" constant="8" id="Xvj-Ps-sSv"/>
-                                    <constraint firstItem="6xq-3t-icp" firstAttribute="leading" secondItem="w92-tb-pco" secondAttribute="leadingMargin" constant="8" id="c9J-95-oXE"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="XuT-7o-jsg" secondAttribute="trailing" constant="91" id="fAV-CM-Z9F"/>
-                                    <constraint firstItem="6xq-3t-icp" firstAttribute="trailing" secondItem="w92-tb-pco" secondAttribute="trailingMargin" constant="8" id="ovM-jb-Orr"/>
-                                    <constraint firstItem="NIr-Ei-eOR" firstAttribute="trailing" secondItem="w92-tb-pco" secondAttribute="trailingMargin" constant="8" id="pJe-Yq-g5U"/>
-                                    <constraint firstItem="6xq-3t-icp" firstAttribute="top" secondItem="w92-tb-pco" secondAttribute="topMargin" constant="8" id="v75-so-ATv"/>
-                                </constraints>
-                            </collectionViewCell>
-                        </cells>
+                        <cells/>
                         <connections>
                             <outlet property="dataSource" destination="B5O-DK-cuQ" id="wKH-dK-yrl"/>
                             <outlet property="delegate" destination="B5O-DK-cuQ" id="o9T-eg-PC7"/>
