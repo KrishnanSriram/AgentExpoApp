@@ -51,7 +51,8 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
         
         securityResonse = AgentSecurityResponse()
         
-        self.setupGradientBGView()
+//        self.setupGradientBGView()
+        self.setupBGImage()
 
     }
 
@@ -88,18 +89,18 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
         self.labelTextForCell(indexPath: indexPath, cell: cell)
         
 //        cell.contentView.backgroundColor = UIColor.white
-        cell.contentView.layer.cornerRadius = 2.0
-        cell.contentView.layer.borderWidth = 1.0
-        cell.contentView.layer.borderColor = UIColor.yellow.cgColor
-        cell.contentView.layer.masksToBounds = true
+//        cell.contentView.layer.cornerRadius = 2.0
+//        cell.contentView.layer.borderWidth = 1.0
+//        cell.contentView.layer.borderColor = UIColor.yellow.cgColor
+//        cell.contentView.layer.masksToBounds = true
         
-        cell.layer.shadowColor = UIColor.yellow.cgColor
-        cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
-        cell.layer.shadowRadius = 3.0
-        cell.layer.shadowOpacity = 1.0
-        cell.layer.masksToBounds = false
-        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
-        cell.layer.cornerRadius = 10.0
+//        cell.layer.shadowColor = UIColor.yellow.cgColor
+//        cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+//        cell.layer.shadowRadius = 3.0
+//        cell.layer.shadowOpacity = 1.0
+//        cell.layer.masksToBounds = false
+//        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
+//        cell.layer.cornerRadius = 10.0
         
         
         return cell
@@ -237,6 +238,12 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
         }
         
         return percentage
+    }
+    
+    func setupBGImage() {
+        let imageView = UIImageView(image: UIImage(named: "bg-dark.jpg"))
+        imageView.contentMode = UIViewContentMode.scaleAspectFill
+        collectionView!.backgroundView = imageView
     }
     
     func setupGradientBGView() {

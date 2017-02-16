@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		024F1DAE1E53437B004C0320 /* AgentSecurityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F1DAD1E53437B004C0320 /* AgentSecurityResponse.swift */; };
 		024F1DB01E539CF1004C0320 /* SFGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F1DAF1E539CF1004C0320 /* SFGaugeView.swift */; };
+		024F1DB41E55E8C6004C0320 /* CircularCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F1DB31E55E8C6004C0320 /* CircularCollectionViewLayout.swift */; };
+		024F1DB61E55E9E5004C0320 /* bg-dark.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 024F1DB51E55E9E5004C0320 /* bg-dark.jpg */; };
 		CB12A29E1E43F0C400FE9F0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB12A29D1E43F0C400FE9F0B /* AppDelegate.swift */; };
 		CB12A2A31E43F0C400FE9F0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB12A2A11E43F0C400FE9F0B /* Main.storyboard */; };
 		CB12A2A51E43F0C400FE9F0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB12A2A41E43F0C400FE9F0B /* Assets.xcassets */; };
@@ -51,6 +53,8 @@
 /* Begin PBXFileReference section */
 		024F1DAD1E53437B004C0320 /* AgentSecurityResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentSecurityResponse.swift; sourceTree = "<group>"; };
 		024F1DAF1E539CF1004C0320 /* SFGaugeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFGaugeView.swift; sourceTree = "<group>"; };
+		024F1DB31E55E8C6004C0320 /* CircularCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularCollectionViewLayout.swift; sourceTree = "<group>"; };
+		024F1DB51E55E9E5004C0320 /* bg-dark.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg-dark.jpg"; sourceTree = "<group>"; };
 		CB12A29A1E43F0C400FE9F0B /* AgentSecurityCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AgentSecurityCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB12A29D1E43F0C400FE9F0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB12A2A21E43F0C400FE9F0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -128,11 +132,13 @@
 			isa = PBXGroup;
 			children = (
 				024F1DAF1E539CF1004C0320 /* SFGaugeView.swift */,
+				024F1DB31E55E8C6004C0320 /* CircularCollectionViewLayout.swift */,
 				CB12A3221E52A8F200FE9F0B /* Model */,
 				CB12A31E1E5293EF00FE9F0B /* AgentSecurityCheck.json */,
 				CB12A29D1E43F0C400FE9F0B /* AppDelegate.swift */,
 				CB12A2A11E43F0C400FE9F0B /* Main.storyboard */,
 				CB12A2A41E43F0C400FE9F0B /* Assets.xcassets */,
+				024F1DB51E55E9E5004C0320 /* bg-dark.jpg */,
 				CB12A2A61E43F0C400FE9F0B /* LaunchScreen.storyboard */,
 				CB12A2A91E43F0C400FE9F0B /* Info.plist */,
 				CB12A2CB1E43F19E00FE9F0B /* HomeViewController.swift */,
@@ -292,6 +298,7 @@
 				CB12A2DC1E45413D00FE9F0B /* QuestionaireTypeCVCellCollectionViewCell.xib in Resources */,
 				CB12A2A81E43F0C400FE9F0B /* LaunchScreen.storyboard in Resources */,
 				CB12A2A51E43F0C400FE9F0B /* Assets.xcassets in Resources */,
+				024F1DB61E55E9E5004C0320 /* bg-dark.jpg in Resources */,
 				CB12A2A31E43F0C400FE9F0B /* Main.storyboard in Resources */,
 				CB12A2D61E44C87700FE9F0B /* ChoicesData.plist in Resources */,
 			);
@@ -330,6 +337,7 @@
 				024F1DB01E539CF1004C0320 /* SFGaugeView.swift in Sources */,
 				024F1DAE1E53437B004C0320 /* AgentSecurityResponse.swift in Sources */,
 				CB12A3281E52AA5C00FE9F0B /* AgentSecurityCheckItemDetailsChoices.swift in Sources */,
+				024F1DB41E55E8C6004C0320 /* CircularCollectionViewLayout.swift in Sources */,
 				CB12A3261E52AA5000FE9F0B /* AgentSecurityCheckItemDetails.swift in Sources */,
 				CB12A3241E52A90F00FE9F0B /* AgentSecurityCheckItem.swift in Sources */,
 			);
