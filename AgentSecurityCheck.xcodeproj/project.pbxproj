@@ -172,6 +172,35 @@
 			name = Helper;
 			sourceTree = "<group>";
 		};
+		029F026C1E5B774F00E02186 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				024F1DAF1E539CF1004C0320 /* SFGaugeView.swift */,
+				024F1DB31E55E8C6004C0320 /* CircularCollectionViewLayout.swift */,
+				CB12A2D91E45413D00FE9F0B /* QuestionaireTypeCVCellCollectionViewCell.swift */,
+				CB12A2DA1E45413D00FE9F0B /* QuestionaireTypeCVCellCollectionViewCell.xib */,
+			);
+			name = CustomViews;
+			sourceTree = "<group>";
+		};
+		029F026D1E5B777100E02186 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CB12A2CB1E43F19E00FE9F0B /* HomeViewController.swift */,
+				CB12A2D71E45017F00FE9F0B /* ResultsViewController.swift */,
+				CB12A2CD1E44A25700FE9F0B /* ChoicesTableViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		029F026E1E5B779700E02186 /* LocalData */ = {
+			isa = PBXGroup;
+			children = (
+				CB12A2D51E44C87600FE9F0B /* ChoicesData.plist */,
+			);
+			name = LocalData;
+			sourceTree = "<group>";
+		};
 		02B2DEE61E5B3275006690ED /* Sdk */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,10 +257,11 @@
 		CB12A29C1E43F0C400FE9F0B /* AgentSecurityCheck */ = {
 			isa = PBXGroup;
 			children = (
+				029F026E1E5B779700E02186 /* LocalData */,
+				029F026D1E5B777100E02186 /* ViewControllers */,
+				029F026C1E5B774F00E02186 /* CustomViews */,
 				029F02591E5B47CC00E02186 /* Helper */,
 				02B2DEE61E5B3275006690ED /* Sdk */,
-				024F1DAF1E539CF1004C0320 /* SFGaugeView.swift */,
-				024F1DB31E55E8C6004C0320 /* CircularCollectionViewLayout.swift */,
 				CB12A3221E52A8F200FE9F0B /* Model */,
 				CB12A31E1E5293EF00FE9F0B /* AgentSecurityCheck.json */,
 				CB12A29D1E43F0C400FE9F0B /* AppDelegate.swift */,
@@ -240,15 +270,9 @@
 				024F1DB51E55E9E5004C0320 /* bg-dark.jpg */,
 				CB12A2A61E43F0C400FE9F0B /* LaunchScreen.storyboard */,
 				CB12A2A91E43F0C400FE9F0B /* Info.plist */,
-				CB12A2CB1E43F19E00FE9F0B /* HomeViewController.swift */,
-				CB12A2D71E45017F00FE9F0B /* ResultsViewController.swift */,
-				CB12A2CD1E44A25700FE9F0B /* ChoicesTableViewController.swift */,
 				CB12A2CF1E44BF0400FE9F0B /* AppManager.swift */,
 				CB12A2D11E44C51100FE9F0B /* ColorManager.swift */,
 				CB12A2D31E44C84C00FE9F0B /* ChoicesDataManager.swift */,
-				CB12A2D51E44C87600FE9F0B /* ChoicesData.plist */,
-				CB12A2D91E45413D00FE9F0B /* QuestionaireTypeCVCellCollectionViewCell.swift */,
-				CB12A2DA1E45413D00FE9F0B /* QuestionaireTypeCVCellCollectionViewCell.xib */,
 				CB12A3201E52990900FE9F0B /* AgentSecurityDataManager.swift */,
 			);
 			path = AgentSecurityCheck;

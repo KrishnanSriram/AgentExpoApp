@@ -94,22 +94,6 @@ class ContactsTable: NSObject, Table {
         var errors: [NSError] = []
         let group: DispatchGroup = DispatchGroup()
         
-//        let itemForGet: Contacts! = Contacts()
-//        itemForGet._emailId = email
-//        
-//        
-//        group.enter()
-//        
-//        
-//        objectMapper.save(itemForGet, completionHandler: {(error: Error?) -> Void in
-//            if let error = error as? NSError {
-//                DispatchQueue.main.async(execute: {
-//                    errors.append(error)
-//                })
-//            }
-//            group.leave()
-//        })
-        
         let item: Contacts = Contacts()
         item._emailId = email
         

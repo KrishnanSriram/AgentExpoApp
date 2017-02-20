@@ -63,7 +63,8 @@
 		<key>title</key>
 		<string>QUESTION THREE</string>
 		<key>question</key>
-		<string>Does your agency keep anti-virus and other software updated constantly?</string>
+		<string>
+Does your agency keep anti-virus and other software updated constantly?</string>
 		<key>choices</key>
 		<array>
 			<dict>
@@ -91,7 +92,8 @@
 		<key>title</key>
 		<string>QUESTION FOUR</string>
 		<key>question</key>
-		<string>Does your agency audit user accounts and change passwords when someone leaves?</string>
+		<string>
+Does your agency audit user accounts and change passwords when someone leaves?</string>
 		<key>choices</key>
 		<array>
 			<dict>
@@ -147,7 +149,8 @@
 		<key>title</key>
 		<string>QUESTION SIX</string>
 		<key>question</key>
-		<string>Does your agency manage removable media?</string>
+		<string>
+Does your agency manage removable media?</string>
 		<key>choices</key>
 		<array>
 			<dict>
