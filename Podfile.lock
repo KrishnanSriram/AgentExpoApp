@@ -1,15 +1,20 @@
 PODS:
   - AWSCore (2.5.1)
+  - AWSDynamoDB (2.5.1):
+    - AWSCore (= 2.5.1)
   - AWSMobileAnalytics (2.5.1):
     - AWSCore (= 2.5.1)
 
 DEPENDENCIES:
+  - AWSCore
+  - AWSDynamoDB
   - AWSMobileAnalytics (~> 2.4)
 
 SPEC CHECKSUMS:
   AWSCore: 71ca929a42c68ca7d645fcfa1e41ea0ff792a275
+  AWSDynamoDB: ea3931b7b00994fdc6aad69d6ba24a4adbb44eb1
   AWSMobileAnalytics: 2b54573858f1f516183e3d2a04c6ed700aec8079
 
-PODFILE CHECKSUM: 0fac1afed5252d8be6c74de4507e77afd9a10be5
+PODFILE CHECKSUM: 63623627dac50fe89107f0db26c97731f9ab4596
 
 COCOAPODS: 1.2.0

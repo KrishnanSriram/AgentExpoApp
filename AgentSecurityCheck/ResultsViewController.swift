@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AWSMobileAnalytics
 
 class ResultsViewController: UIViewController {
     
@@ -53,7 +54,14 @@ class ResultsViewController: UIViewController {
             alert -> Void in
             
             let firstTextField = alertController.textFields![0] as UITextField
-            debugPrint(firstTextField.text)
+            let contactsTable = ContactsTable()
+            contactsTable.insertEMailItemWithCompletionHandler(email: firstTextField.text!, completionHandler: { (error) in
+                if error != nil {
+                    debugPrint(error!.description)
+                } else {
+                    debugPrint("Data is now persisted")
+                }
+            })
             
         })
         

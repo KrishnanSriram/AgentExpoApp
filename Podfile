@@ -5,5 +5,6 @@ use_frameworks!
 
 target 'AgentSecurityCheck' do
 pod 'AWSMobileAnalytics', '~> 2.4'
-
+pod 'AWSDynamoDB'
+pod 'AWSCore'
 end

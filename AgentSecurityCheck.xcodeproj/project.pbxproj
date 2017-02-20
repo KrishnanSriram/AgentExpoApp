@@ -11,6 +11,19 @@
 		024F1DB01E539CF1004C0320 /* SFGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F1DAF1E539CF1004C0320 /* SFGaugeView.swift */; };
 		024F1DB41E55E8C6004C0320 /* CircularCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F1DB31E55E8C6004C0320 /* CircularCollectionViewLayout.swift */; };
 		024F1DB61E55E9E5004C0320 /* bg-dark.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 024F1DB51E55E9E5004C0320 /* bg-dark.jpg */; };
+		029F02511E5B43C500E02186 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 029F02501E5B43C500E02186 /* libsqlite3.tbd */; };
+		029F02531E5B43CF00E02186 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 029F02521E5B43CF00E02186 /* libz.tbd */; };
+		029F02571E5B46BE00E02186 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029F02551E5B46BE00E02186 /* Contacts.swift */; };
+		029F02581E5B46BE00E02186 /* PollChoices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029F02561E5B46BE00E02186 /* PollChoices.swift */; };
+		029F025B1E5B47D900E02186 /* ContactsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029F025A1E5B47D900E02186 /* ContactsTable.swift */; };
+		029F025D1E5B493B00E02186 /* NoSQLModelHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029F025C1E5B493B00E02186 /* NoSQLModelHelpers.swift */; };
+		029F025F1E5B494E00E02186 /* NoSQLSampleDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029F025E1E5B494E00E02186 /* NoSQLSampleDataGenerator.swift */; };
+		029F02641E5B58BE00E02186 /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 029F02601E5B58BE00E02186 /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		029F02661E5B58BE00E02186 /* AWSDynamoDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 029F02611E5B58BE00E02186 /* AWSDynamoDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		029F02681E5B58BE00E02186 /* AWSMobileAnalytics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 029F02621E5B58BE00E02186 /* AWSMobileAnalytics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		029F026B1E5B58FF00E02186 /* AWSMobileHubHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 029F026A1E5B58FF00E02186 /* AWSMobileHubHelper.framework */; };
+		02B2DEED1E5B3275006690ED /* CheckXcodeVersion.sh in Resources */ = {isa = PBXBuildFile; fileRef = 02B2DEEA1E5B3275006690ED /* CheckXcodeVersion.sh */; };
+		02B2DEF81E5B3E30006690ED /* AWSMobileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2DEF71E5B3E30006690ED /* AWSMobileClient.swift */; };
 		B2ADAC15E615A4F82427F213 /* Pods_AgentSecurityCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A0976A22CD50D590E32EA /* Pods_AgentSecurityCheck.framework */; };
 		CB12A29E1E43F0C400FE9F0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB12A29D1E43F0C400FE9F0B /* AppDelegate.swift */; };
 		CB12A2A31E43F0C400FE9F0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB12A2A11E43F0C400FE9F0B /* Main.storyboard */; };
@@ -51,11 +64,43 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		029F02691E5B58BE00E02186 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				029F02661E5B58BE00E02186 /* AWSDynamoDB.framework in Embed Frameworks */,
+				029F02681E5B58BE00E02186 /* AWSMobileAnalytics.framework in Embed Frameworks */,
+				029F02641E5B58BE00E02186 /* AWSCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		024F1DAD1E53437B004C0320 /* AgentSecurityResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentSecurityResponse.swift; sourceTree = "<group>"; };
 		024F1DAF1E539CF1004C0320 /* SFGaugeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFGaugeView.swift; sourceTree = "<group>"; };
 		024F1DB31E55E8C6004C0320 /* CircularCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularCollectionViewLayout.swift; sourceTree = "<group>"; };
 		024F1DB51E55E9E5004C0320 /* bg-dark.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg-dark.jpg"; sourceTree = "<group>"; };
+		029F02471E5B41BC00E02186 /* AWSMobileHubHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSMobileHubHelper.framework; sourceTree = "<group>"; };
+		029F02501E5B43C500E02186 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		029F02521E5B43CF00E02186 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		029F02551E5B46BE00E02186 /* Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
+		029F02561E5B46BE00E02186 /* PollChoices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollChoices.swift; sourceTree = "<group>"; };
+		029F025A1E5B47D900E02186 /* ContactsTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTable.swift; sourceTree = "<group>"; };
+		029F025C1E5B493B00E02186 /* NoSQLModelHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoSQLModelHelpers.swift; sourceTree = "<group>"; };
+		029F025E1E5B494E00E02186 /* NoSQLSampleDataGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoSQLSampleDataGenerator.swift; sourceTree = "<group>"; };
+		029F02601E5B58BE00E02186 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCore.framework; sourceTree = "<group>"; };
+		029F02611E5B58BE00E02186 /* AWSDynamoDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSDynamoDB.framework; sourceTree = "<group>"; };
+		029F02621E5B58BE00E02186 /* AWSMobileAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSMobileAnalytics.framework; sourceTree = "<group>"; };
+		029F026A1E5B58FF00E02186 /* AWSMobileHubHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSMobileHubHelper.framework; path = "../../../Downloads/MyFirstAWSMobile-integration-lib-aws-my-sample-app-ios-swift/AmazonAws/AWSMobileHubHelper.framework"; sourceTree = "<group>"; };
+		02B2DEE81E5B3275006690ED /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCore.framework; sourceTree = "<group>"; };
+		02B2DEE91E5B3275006690ED /* AWSDynamoDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSDynamoDB.framework; sourceTree = "<group>"; };
+		02B2DEEA1E5B3275006690ED /* CheckXcodeVersion.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = CheckXcodeVersion.sh; sourceTree = "<group>"; };
+		02B2DEF71E5B3E30006690ED /* AWSMobileClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSMobileClient.swift; sourceTree = "<group>"; };
 		10804C75B69109DCA6F2B101 /* Pods-AgentSecurityCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgentSecurityCheck.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AgentSecurityCheck/Pods-AgentSecurityCheck.debug.xcconfig"; sourceTree = "<group>"; };
 		496A0976A22CD50D590E32EA /* Pods_AgentSecurityCheck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AgentSecurityCheck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB12A29A1E43F0C400FE9F0B /* AgentSecurityCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AgentSecurityCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +137,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				029F02531E5B43CF00E02186 /* libz.tbd in Frameworks */,
+				029F02511E5B43C500E02186 /* libsqlite3.tbd in Frameworks */,
+				029F026B1E5B58FF00E02186 /* AWSMobileHubHelper.framework in Frameworks */,
 				B2ADAC15E615A4F82427F213 /* Pods_AgentSecurityCheck.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,6 +161,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		029F02591E5B47CC00E02186 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				029F025A1E5B47D900E02186 /* ContactsTable.swift */,
+				029F025C1E5B493B00E02186 /* NoSQLModelHelpers.swift */,
+				029F025E1E5B494E00E02186 /* NoSQLSampleDataGenerator.swift */,
+				02B2DEF71E5B3E30006690ED /* AWSMobileClient.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		02B2DEE61E5B3275006690ED /* Sdk */ = {
+			isa = PBXGroup;
+			children = (
+				02B2DEE71E5B3275006690ED /* Aws */,
+				02B2DEEA1E5B3275006690ED /* CheckXcodeVersion.sh */,
+			);
+			path = Sdk;
+			sourceTree = "<group>";
+		};
+		02B2DEE71E5B3275006690ED /* Aws */ = {
+			isa = PBXGroup;
+			children = (
+				029F02471E5B41BC00E02186 /* AWSMobileHubHelper.framework */,
+				02B2DEE81E5B3275006690ED /* AWSCore.framework */,
+				02B2DEE91E5B3275006690ED /* AWSDynamoDB.framework */,
+			);
+			path = Aws;
+			sourceTree = "<group>";
+		};
 		371CF2F42108EE715A2740B6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +203,9 @@
 		CB12A2911E43F0C300FE9F0B = {
 			isa = PBXGroup;
 			children = (
+				029F02601E5B58BE00E02186 /* AWSCore.framework */,
+				029F02611E5B58BE00E02186 /* AWSDynamoDB.framework */,
+				029F02621E5B58BE00E02186 /* AWSMobileAnalytics.framework */,
 				CB12A29C1E43F0C400FE9F0B /* AgentSecurityCheck */,
 				CB12A2B11E43F0C400FE9F0B /* AgentSecurityCheckTests */,
 				CB12A2BC1E43F0C400FE9F0B /* AgentSecurityCheckUITests */,
@@ -147,6 +228,8 @@
 		CB12A29C1E43F0C400FE9F0B /* AgentSecurityCheck */ = {
 			isa = PBXGroup;
 			children = (
+				029F02591E5B47CC00E02186 /* Helper */,
+				02B2DEE61E5B3275006690ED /* Sdk */,
 				024F1DAF1E539CF1004C0320 /* SFGaugeView.swift */,
 				024F1DB31E55E8C6004C0320 /* CircularCollectionViewLayout.swift */,
 				CB12A3221E52A8F200FE9F0B /* Model */,
@@ -192,6 +275,8 @@
 		CB12A3221E52A8F200FE9F0B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				029F02551E5B46BE00E02186 /* Contacts.swift */,
+				029F02561E5B46BE00E02186 /* PollChoices.swift */,
 				CB12A3231E52A90F00FE9F0B /* AgentSecurityCheckItem.swift */,
 				CB12A3251E52AA5000FE9F0B /* AgentSecurityCheckItemDetails.swift */,
 				CB12A3271E52AA5C00FE9F0B /* AgentSecurityCheckItemDetailsChoices.swift */,
@@ -203,6 +288,9 @@
 		E5D929B2009602A282963A30 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				029F026A1E5B58FF00E02186 /* AWSMobileHubHelper.framework */,
+				029F02521E5B43CF00E02186 /* libz.tbd */,
+				029F02501E5B43C500E02186 /* libsqlite3.tbd */,
 				496A0976A22CD50D590E32EA /* Pods_AgentSecurityCheck.framework */,
 			);
 			name = Frameworks;
@@ -221,6 +309,8 @@
 				CB12A2981E43F0C300FE9F0B /* Resources */,
 				B8BBFE40F68A122A77C78E5E /* [CP] Embed Pods Frameworks */,
 				B568D62F62B5FADA6CDC4C40 /* [CP] Copy Pods Resources */,
+				02B2DEF61E5B3352006690ED /* ShellScript */,
+				029F02691E5B58BE00E02186 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -325,6 +415,7 @@
 				CB12A2DC1E45413D00FE9F0B /* QuestionaireTypeCVCellCollectionViewCell.xib in Resources */,
 				CB12A2A81E43F0C400FE9F0B /* LaunchScreen.storyboard in Resources */,
 				CB12A2A51E43F0C400FE9F0B /* Assets.xcassets in Resources */,
+				02B2DEED1E5B3275006690ED /* CheckXcodeVersion.sh in Resources */,
 				024F1DB61E55E9E5004C0320 /* bg-dark.jpg in Resources */,
 				CB12A2A31E43F0C400FE9F0B /* Main.storyboard in Resources */,
 				CB12A2D61E44C87700FE9F0B /* ChoicesData.plist in Resources */,
@@ -348,6 +439,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		02B2DEF61E5B3352006690ED /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework/strip-frameworks.sh\"";
+		};
 		6A3014942AB50B8767BFDCF4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -402,19 +506,25 @@
 			files = (
 				CB12A2D41E44C84C00FE9F0B /* ChoicesDataManager.swift in Sources */,
 				CB12A2CE1E44A25700FE9F0B /* ChoicesTableViewController.swift in Sources */,
+				029F025F1E5B494E00E02186 /* NoSQLSampleDataGenerator.swift in Sources */,
+				02B2DEF81E5B3E30006690ED /* AWSMobileClient.swift in Sources */,
+				029F025B1E5B47D900E02186 /* ContactsTable.swift in Sources */,
 				CB12A2D21E44C51100FE9F0B /* ColorManager.swift in Sources */,
 				CB12A2D81E45017F00FE9F0B /* ResultsViewController.swift in Sources */,
 				CB12A2DB1E45413D00FE9F0B /* QuestionaireTypeCVCellCollectionViewCell.swift in Sources */,
 				CB12A2CC1E43F19E00FE9F0B /* HomeViewController.swift in Sources */,
 				CB12A3211E52990900FE9F0B /* AgentSecurityDataManager.swift in Sources */,
 				CB12A29E1E43F0C400FE9F0B /* AppDelegate.swift in Sources */,
+				029F02581E5B46BE00E02186 /* PollChoices.swift in Sources */,
 				CB12A2D01E44BF0400FE9F0B /* AppManager.swift in Sources */,
+				029F02571E5B46BE00E02186 /* Contacts.swift in Sources */,
 				024F1DB01E539CF1004C0320 /* SFGaugeView.swift in Sources */,
 				024F1DAE1E53437B004C0320 /* AgentSecurityResponse.swift in Sources */,
 				CB12A3281E52AA5C00FE9F0B /* AgentSecurityCheckItemDetailsChoices.swift in Sources */,
 				024F1DB41E55E8C6004C0320 /* CircularCollectionViewLayout.swift in Sources */,
 				CB12A3261E52AA5000FE9F0B /* AgentSecurityCheckItemDetails.swift in Sources */,
 				CB12A3241E52A90F00FE9F0B /* AgentSecurityCheckItem.swift in Sources */,
+				029F025D1E5B493B00E02186 /* NoSQLModelHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +678,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4345WGKETF;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AgentSecurityCheck/Sdk/Aws",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = AgentSecurityCheck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.grange.ios.AgentSecurityCheck;
@@ -582,6 +697,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4345WGKETF;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AgentSecurityCheck/Sdk/Aws",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = AgentSecurityCheck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.grange.ios.AgentSecurityCheck;
