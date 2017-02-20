@@ -11,6 +11,7 @@
 		024F1DB01E539CF1004C0320 /* SFGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F1DAF1E539CF1004C0320 /* SFGaugeView.swift */; };
 		024F1DB41E55E8C6004C0320 /* CircularCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F1DB31E55E8C6004C0320 /* CircularCollectionViewLayout.swift */; };
 		024F1DB61E55E9E5004C0320 /* bg-dark.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 024F1DB51E55E9E5004C0320 /* bg-dark.jpg */; };
+		B2ADAC15E615A4F82427F213 /* Pods_AgentSecurityCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A0976A22CD50D590E32EA /* Pods_AgentSecurityCheck.framework */; };
 		CB12A29E1E43F0C400FE9F0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB12A29D1E43F0C400FE9F0B /* AppDelegate.swift */; };
 		CB12A2A31E43F0C400FE9F0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB12A2A11E43F0C400FE9F0B /* Main.storyboard */; };
 		CB12A2A51E43F0C400FE9F0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB12A2A41E43F0C400FE9F0B /* Assets.xcassets */; };
@@ -55,6 +56,8 @@
 		024F1DAF1E539CF1004C0320 /* SFGaugeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFGaugeView.swift; sourceTree = "<group>"; };
 		024F1DB31E55E8C6004C0320 /* CircularCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularCollectionViewLayout.swift; sourceTree = "<group>"; };
 		024F1DB51E55E9E5004C0320 /* bg-dark.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg-dark.jpg"; sourceTree = "<group>"; };
+		10804C75B69109DCA6F2B101 /* Pods-AgentSecurityCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgentSecurityCheck.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AgentSecurityCheck/Pods-AgentSecurityCheck.debug.xcconfig"; sourceTree = "<group>"; };
+		496A0976A22CD50D590E32EA /* Pods_AgentSecurityCheck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AgentSecurityCheck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB12A29A1E43F0C400FE9F0B /* AgentSecurityCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AgentSecurityCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB12A29D1E43F0C400FE9F0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB12A2A21E43F0C400FE9F0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -81,6 +84,7 @@
 		CB12A3231E52A90F00FE9F0B /* AgentSecurityCheckItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentSecurityCheckItem.swift; sourceTree = "<group>"; };
 		CB12A3251E52AA5000FE9F0B /* AgentSecurityCheckItemDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentSecurityCheckItemDetails.swift; sourceTree = "<group>"; };
 		CB12A3271E52AA5C00FE9F0B /* AgentSecurityCheckItemDetailsChoices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentSecurityCheckItemDetailsChoices.swift; sourceTree = "<group>"; };
+		E7C96069C6FE9262CE9F6EBA /* Pods-AgentSecurityCheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgentSecurityCheck.release.xcconfig"; path = "Pods/Target Support Files/Pods-AgentSecurityCheck/Pods-AgentSecurityCheck.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2ADAC15E615A4F82427F213 /* Pods_AgentSecurityCheck.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +113,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		371CF2F42108EE715A2740B6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				10804C75B69109DCA6F2B101 /* Pods-AgentSecurityCheck.debug.xcconfig */,
+				E7C96069C6FE9262CE9F6EBA /* Pods-AgentSecurityCheck.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CB12A2911E43F0C300FE9F0B = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +129,8 @@
 				CB12A2B11E43F0C400FE9F0B /* AgentSecurityCheckTests */,
 				CB12A2BC1E43F0C400FE9F0B /* AgentSecurityCheckUITests */,
 				CB12A29B1E43F0C400FE9F0B /* Products */,
+				371CF2F42108EE715A2740B6 /* Pods */,
+				E5D929B2009602A282963A30 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -184,6 +200,14 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		E5D929B2009602A282963A30 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				496A0976A22CD50D590E32EA /* Pods_AgentSecurityCheck.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -191,9 +215,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB12A2C21E43F0C400FE9F0B /* Build configuration list for PBXNativeTarget "AgentSecurityCheck" */;
 			buildPhases = (
+				6A3014942AB50B8767BFDCF4 /* [CP] Check Pods Manifest.lock */,
 				CB12A2961E43F0C300FE9F0B /* Sources */,
 				CB12A2971E43F0C300FE9F0B /* Frameworks */,
 				CB12A2981E43F0C300FE9F0B /* Resources */,
+				B8BBFE40F68A122A77C78E5E /* [CP] Embed Pods Frameworks */,
+				B568D62F62B5FADA6CDC4C40 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -319,6 +346,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6A3014942AB50B8767BFDCF4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B568D62F62B5FADA6CDC4C40 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AgentSecurityCheck/Pods-AgentSecurityCheck-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8BBFE40F68A122A77C78E5E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AgentSecurityCheck/Pods-AgentSecurityCheck-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CB12A2961E43F0C300FE9F0B /* Sources */ = {
@@ -489,6 +564,7 @@
 		};
 		CB12A2C31E43F0C400FE9F0B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10804C75B69109DCA6F2B101 /* Pods-AgentSecurityCheck.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4345WGKETF;
@@ -502,6 +578,7 @@
 		};
 		CB12A2C41E43F0C400FE9F0B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7C96069C6FE9262CE9F6EBA /* Pods-AgentSecurityCheck.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4345WGKETF;

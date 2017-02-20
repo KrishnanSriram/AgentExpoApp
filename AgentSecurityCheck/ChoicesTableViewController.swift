@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AWSMobileAnalytics
 
 class ChoicesTableViewController: UITableViewController {
 
@@ -152,6 +153,7 @@ class ChoicesTableViewController: UITableViewController {
                                                                     choice: choice.choiceId,
                                                                     weight: choice.weight)
         self.choiceDelegate.selectedChoice(choice: checkItemDetails)
+        self.addToAnalytics(questionId: self.questionId, choice: choice.choiceId)
         self.dismissView(sender: sender)
     }
     
@@ -173,6 +175,39 @@ class ChoicesTableViewController: UITableViewController {
         let vv = UIView()
         self.tableView!.backgroundView = vv
         self.tableView!.backgroundView!.layer.insertSublayer(collectionGradient, at: 0)
+    }
+    
+    func addToAnalytics(questionId: String, choice: String) {
+        let eventClient = AWSMobileAnalytics(forAppId: "391a0421b54941bea84102a26daddc33").eventClient
+        
+        guard let client = eventClient else {
+            print("Error creating AMA event client")
+            return
+        }
+        
+        guard let event = client.createEvent(withEventType: "Achievement") else {
+            print("Error creating AMA event")
+            return
+        }
+        
+        event.addAttribute(choice, forKey: questionId)
+        event.addMetric(self.choiceToNumericValue(choice: choice) as NSNumber!,
+                        forKey: questionId)
+        client.record(event)
+        debugPrint("Recorded event")
+        client.submitEvents()
+    }
+    
+    func choiceToNumericValue(choice: String) -> Int {
+        if choice == "A" {
+            return 1
+        } else if choice == "B" {
+            return 2
+        } else if choice == "C" {
+            return 3
+        }
+        
+        return 0
     }
 
 }

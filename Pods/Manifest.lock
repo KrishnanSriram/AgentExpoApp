@@ -1,0 +1,15 @@
+PODS:
+  - AWSCore (2.5.1)
+  - AWSMobileAnalytics (2.5.1):
+    - AWSCore (= 2.5.1)
+
+DEPENDENCIES:
+  - AWSMobileAnalytics (~> 2.4)
+
+SPEC CHECKSUMS:
+  AWSCore: 71ca929a42c68ca7d645fcfa1e41ea0ff792a275
+  AWSMobileAnalytics: 2b54573858f1f516183e3d2a04c6ed700aec8079
+
+PODFILE CHECKSUM: 0fac1afed5252d8be6c74de4507e77afd9a10be5
+
+COCOAPODS: 1.2.0

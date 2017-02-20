@@ -83,7 +83,7 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! QuestionaireTypeCVCellCollectionViewCell
     
-//        self.imageForCell(indexPath: indexPath, cell: cell)
+        self.imageForCell(indexPath: indexPath, cell: cell)
         self.labelTextForCell(indexPath: indexPath, cell: cell)
         let label: UILabel = cell.viewWithTag(30) as! UILabel
         label.isHidden = true
@@ -167,23 +167,23 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
         case 0:
             imageView.image = UIImage(named: "wifi")
         case 1:
-            imageView.image = UIImage(named: "plan")
+            imageView.image = UIImage(named: "policy")
         case 2:
             imageView.image = UIImage(named: "antivirus")
         case 3:
-            imageView.image = UIImage(named: "search")
+            imageView.image = UIImage(named: "primary-password")
         case 4:
-            imageView.image = UIImage(named: "wifi")
+            imageView.image = UIImage(named: "networksec")
         case 5:
-            imageView.image = UIImage(named: "wifi")
+            imageView.image = UIImage(named: "usb")
         case 6:
             imageView.image = UIImage(named: "wifi")
         case 7:
-            imageView.image = UIImage(named: "wifi")
+            imageView.image = UIImage(named: "search")
         case 8:
-            imageView.image = UIImage(named: "wifi")
+            imageView.image = UIImage(named: "web")
         default:
-            imageView.image = UIImage(named: "wifi")
+            imageView.image = UIImage(named: "web2")
         }
     }
     

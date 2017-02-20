@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AWSMobileAnalytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let credentialsProvider = AWSCognitoCredentialsProvider(regionType: .USEast1, identityPoolId: "us-east-1:3b834ec3-9056-4cba-8063-8440a44a70cf")
+        //Amazon Cognito Identity Pool ID
+        let serviceConfiguration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: credentialsProvider)
+        let analyticsConfiguration = AWSMobileAnalyticsConfiguration()
+        analyticsConfiguration.serviceConfiguration = serviceConfiguration
+        _ = AWSMobileAnalytics(forAppId: "391a0421b54941bea84102a26daddc33",
+                                           configuration: analyticsConfiguration)
+
+        
+        AWSLogger.default().logLevel = .verbose
+        
         return true
     }
 
