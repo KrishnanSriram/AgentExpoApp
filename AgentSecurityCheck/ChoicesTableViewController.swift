@@ -141,10 +141,16 @@ class ChoicesTableViewController: UITableViewController {
     }
     
     func formatNavigationBar(navigationBar: UINavigationBar) {
-        navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationBar.backgroundColor = UIColor.white
-//            ColorManager.sharedInstance.questionsNavigationBarBGColor()
-        navigationBar.shadowImage = UIImage()
+        let gradient = CAGradientLayer()
+        let sizeLength = UIScreen.main.bounds.size.height * 2
+        let defaultNavigationBarFrame = CGRect(x: 0, y: 0, width: sizeLength, height: 64)
+        gradient.frame = defaultNavigationBarFrame
+        gradient.colors = [UIColor.white.cgColor, UIColor.black.cgColor]
+        UINavigationBar.appearance().setBackgroundImage(self.image(fromLayer: gradient), for: .default)
+//        navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        navigationBar.backgroundColor = UIColor.black
+////            ColorManager.sharedInstance.questionsNavigationBarBGColor()
+//        navigationBar.shadowImage = UIImage()
     }
     
     func saveButtonTapped(sender: UIBarButtonItem) {
@@ -175,6 +181,14 @@ class ChoicesTableViewController: UITableViewController {
         let vv = UIView()
         self.tableView!.backgroundView = vv
         self.tableView!.backgroundView!.layer.insertSublayer(collectionGradient, at: 0)
+    }
+    
+    func image(fromLayer layer: CALayer) -> UIImage {
+        UIGraphicsBeginImageContext(layer.frame.size)
+        layer.render(in: UIGraphicsGetCurrentContext()!)
+        let outputImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return outputImage!
     }
     
     func addToAnalytics(questionId: String, choice: String) {

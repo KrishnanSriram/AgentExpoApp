@@ -88,7 +88,7 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
         let label: UILabel = cell.viewWithTag(30) as! UILabel
         label.isHidden = true
         
-        cell.contentView.backgroundColor = UIColor.white
+        cell.contentView.backgroundColor = indexPath.row == 0 ? UIColor.black : UIColor.white
         cell.contentView.layer.cornerRadius = 2.0
         cell.contentView.layer.borderWidth = 1.0
         cell.contentView.layer.borderColor = UIColor.yellow.cgColor
@@ -165,25 +165,25 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
         let imageView: UIImageView = cell.viewWithTag(20) as! UIImageView
         switch indexPath.row {
         case 0:
-            imageView.image = UIImage(named: "wifi")
+            imageView.image = UIImage(named: "Q1")
         case 1:
-            imageView.image = UIImage(named: "policy")
+            imageView.image = UIImage(named: "Q2")
         case 2:
-            imageView.image = UIImage(named: "antivirus")
+            imageView.image = UIImage(named: "Q3")
         case 3:
-            imageView.image = UIImage(named: "primary-password")
+            imageView.image = UIImage(named: "Q4")
         case 4:
-            imageView.image = UIImage(named: "networksec")
+            imageView.image = UIImage(named: "Q5")
         case 5:
-            imageView.image = UIImage(named: "usb")
+            imageView.image = UIImage(named: "Q6")
         case 6:
-            imageView.image = UIImage(named: "wifi")
+            imageView.image = UIImage(named: "Q7")
         case 7:
-            imageView.image = UIImage(named: "search")
+            imageView.image = UIImage(named: "Q8")
         case 8:
-            imageView.image = UIImage(named: "web")
+            imageView.image = UIImage(named: "Q9")
         default:
-            imageView.image = UIImage(named: "web2")
+            imageView.image = UIImage(named: "Q1")
         }
     }
     
