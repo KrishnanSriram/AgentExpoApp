@@ -22,6 +22,9 @@
 		029F02661E5B58BE00E02186 /* AWSDynamoDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 029F02611E5B58BE00E02186 /* AWSDynamoDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		029F02681E5B58BE00E02186 /* AWSMobileAnalytics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 029F02621E5B58BE00E02186 /* AWSMobileAnalytics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		029F026B1E5B58FF00E02186 /* AWSMobileHubHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 029F026A1E5B58FF00E02186 /* AWSMobileHubHelper.framework */; };
+		029F02701E5DF7D000E02186 /* CustomDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029F026F1E5DF7D000E02186 /* CustomDismissAnimationController.swift */; };
+		029F02721E5E10A500E02186 /* CustomNavigationAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029F02711E5E10A500E02186 /* CustomNavigationAnimationController.swift */; };
+		029F02741E5E133D00E02186 /* CustomPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029F02731E5E133D00E02186 /* CustomPresentAnimationController.swift */; };
 		02B2DEED1E5B3275006690ED /* CheckXcodeVersion.sh in Resources */ = {isa = PBXBuildFile; fileRef = 02B2DEEA1E5B3275006690ED /* CheckXcodeVersion.sh */; };
 		02B2DEF81E5B3E30006690ED /* AWSMobileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2DEF71E5B3E30006690ED /* AWSMobileClient.swift */; };
 		B2ADAC15E615A4F82427F213 /* Pods_AgentSecurityCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A0976A22CD50D590E32EA /* Pods_AgentSecurityCheck.framework */; };
@@ -97,6 +100,9 @@
 		029F02611E5B58BE00E02186 /* AWSDynamoDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSDynamoDB.framework; sourceTree = "<group>"; };
 		029F02621E5B58BE00E02186 /* AWSMobileAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSMobileAnalytics.framework; sourceTree = "<group>"; };
 		029F026A1E5B58FF00E02186 /* AWSMobileHubHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSMobileHubHelper.framework; path = "../../../Downloads/MyFirstAWSMobile-integration-lib-aws-my-sample-app-ios-swift/AmazonAws/AWSMobileHubHelper.framework"; sourceTree = "<group>"; };
+		029F026F1E5DF7D000E02186 /* CustomDismissAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDismissAnimationController.swift; sourceTree = "<group>"; };
+		029F02711E5E10A500E02186 /* CustomNavigationAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationAnimationController.swift; sourceTree = "<group>"; };
+		029F02731E5E133D00E02186 /* CustomPresentAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentAnimationController.swift; sourceTree = "<group>"; };
 		02B2DEE81E5B3275006690ED /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCore.framework; sourceTree = "<group>"; };
 		02B2DEE91E5B3275006690ED /* AWSDynamoDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSDynamoDB.framework; sourceTree = "<group>"; };
 		02B2DEEA1E5B3275006690ED /* CheckXcodeVersion.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = CheckXcodeVersion.sh; sourceTree = "<group>"; };
@@ -179,6 +185,9 @@
 				024F1DB31E55E8C6004C0320 /* CircularCollectionViewLayout.swift */,
 				CB12A2D91E45413D00FE9F0B /* QuestionaireTypeCVCellCollectionViewCell.swift */,
 				CB12A2DA1E45413D00FE9F0B /* QuestionaireTypeCVCellCollectionViewCell.xib */,
+				029F026F1E5DF7D000E02186 /* CustomDismissAnimationController.swift */,
+				029F02731E5E133D00E02186 /* CustomPresentAnimationController.swift */,
+				029F02711E5E10A500E02186 /* CustomNavigationAnimationController.swift */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -537,8 +546,10 @@
 				CB12A2D81E45017F00FE9F0B /* ResultsViewController.swift in Sources */,
 				CB12A2DB1E45413D00FE9F0B /* QuestionaireTypeCVCellCollectionViewCell.swift in Sources */,
 				CB12A2CC1E43F19E00FE9F0B /* HomeViewController.swift in Sources */,
+				029F02741E5E133D00E02186 /* CustomPresentAnimationController.swift in Sources */,
 				CB12A3211E52990900FE9F0B /* AgentSecurityDataManager.swift in Sources */,
 				CB12A29E1E43F0C400FE9F0B /* AppDelegate.swift in Sources */,
+				029F02701E5DF7D000E02186 /* CustomDismissAnimationController.swift in Sources */,
 				029F02581E5B46BE00E02186 /* PollChoices.swift in Sources */,
 				CB12A2D01E44BF0400FE9F0B /* AppManager.swift in Sources */,
 				029F02571E5B46BE00E02186 /* Contacts.swift in Sources */,
@@ -549,6 +560,7 @@
 				CB12A3261E52AA5000FE9F0B /* AgentSecurityCheckItemDetails.swift in Sources */,
 				CB12A3241E52A90F00FE9F0B /* AgentSecurityCheckItem.swift in Sources */,
 				029F025D1E5B493B00E02186 /* NoSQLModelHelpers.swift in Sources */,
+				029F02721E5E10A500E02186 /* CustomNavigationAnimationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

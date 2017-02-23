@@ -28,6 +28,7 @@
                     <navigationItem key="navigationItem" id="vzt-1l-HA5"/>
                     <connections>
                         <segue destination="KRi-nA-H53" kind="show" identifier="result" id="v0W-hY-m3R"/>
+                        <segue destination="kvU-mA-rto" kind="presentation" identifier="Choice" id="DcN-XQ-aKn"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xp1-pj-8pH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -44,7 +45,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChoiceCell" rowHeight="113" id="YXt-E0-L4b">
-                                <rect key="frame" x="0.0" y="56" width="1024" height="113"/>
+                                <rect key="frame" x="0.0" y="55.5" width="1024" height="113"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YXt-E0-L4b" id="2qd-YX-xZK">
                                     <rect key="frame" x="0.0" y="0.0" width="1024" height="112"/>

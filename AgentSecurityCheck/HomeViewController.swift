@@ -26,10 +26,12 @@ protocol ChoiceTableViewControllerDelegate {
     func selectedChoice(choice: AgentSecurityCheckItemDetailsChoices)
 }
 
-class HomeViewController: UICollectionViewController, UIPopoverPresentationControllerDelegate {
+class HomeViewController: UICollectionViewController, UIPopoverPresentationControllerDelegate, UIViewControllerTransitioningDelegate, UINavigationControllerDelegate {
 
     var securityCheckItems: [AgentSecurityCheckItem] = []
     var securityResonse: AgentSecurityResponse!
+    private let customPresentAnimationController = CustomPresentAnimationController()
+    private let customNavigationAnimationController = CustomNavigationAnimationController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +59,13 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
         NotificationCenter.default.addObserver(self, selector: #selector(resetResponse),
                                                name: NSNotification.Name(rawValue: "ResetQuizNotification"),
                                                object: nil)
+        navigationController?.delegate = self
 
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        customNavigationAnimationController.reverse = operation == .pop
+        return customNavigationAnimationController
     }
 
     override func didReceiveMemoryWarning() {
@@ -110,10 +118,12 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let popController = storyboard.instantiateViewController(withIdentifier: "ChoicesTableViewController") as! ChoicesTableViewController
             //ChoicesTableViewController(style: .grouped)
+        popController.transitioningDelegate = self
         popController.viewData = self.securityCheckItems[indexPath.row].details
         popController.questionId = self.securityCheckItems[indexPath.row].id
         popController.choiceDelegate = self
         presentChoicesAsFormController(viewController: popController, selectedItem: indexPath)
+//        presentChoicesAsPopOver(viewController: popController)
         
         
     }
@@ -123,6 +133,11 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
             self.checkToReset()
         }
     }
+    
+//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        return customPresentAnimationController
+//    }
+    
     
     private func checkToReset() {
         let alertController = UIAlertController(title: "Start over again?", message: "Do you want to restart quiz?", preferredStyle: .alert)
@@ -144,10 +159,14 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
     func presentChoicesAsFormController(viewController formController: UIViewController, selectedItem: IndexPath) {
         let navController = UINavigationController(rootViewController: formController)
         navController.modalPresentationStyle = .formSheet
+        navController.transitioningDelegate = self
+        navController.modalTransitionStyle = .crossDissolve
         self.present(navController, animated: true, completion: nil)
     }
     
     func presentChoicesAsPopOver(viewController popController: UIViewController) {
+        let navController = UINavigationController(rootViewController: popController)
+        
         popController.modalPresentationStyle = UIModalPresentationStyle.popover
         
         // set up the popover presentation controller
@@ -158,7 +177,7 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
         popController.popoverPresentationController?.sourceRect = rect
         
         // present the popover
-        self.present(popController, animated: true, completion: nil)
+        self.present(navController, animated: true, completion: nil)
     }
     
     func imageForCell(indexPath: IndexPath, cell: UICollectionViewCell) {

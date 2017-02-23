@@ -44,6 +44,8 @@ class ChoicesTableViewController: UITableViewController {
             //ColorManager.sharedInstance.questionsViewBGColor()
         
 
+        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -140,17 +142,19 @@ class ChoicesTableViewController: UITableViewController {
         self.rightBarButton1.isEnabled = true
     }
     
+    
     func formatNavigationBar(navigationBar: UINavigationBar) {
         let gradient = CAGradientLayer()
+        gradient.anchorPoint = CGPoint.zero
         let sizeLength = UIScreen.main.bounds.size.height * 2
         let defaultNavigationBarFrame = CGRect(x: 0, y: 0, width: sizeLength, height: 64)
+        let colorTop =  UIColor(red: 255.0/255.0, green: 149.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
+        let colorBottom = UIColor(red: 255.0/255.0, green: 94.0/255.0, blue: 58.0/255.0, alpha: 1.0).cgColor
         gradient.frame = defaultNavigationBarFrame
-        gradient.colors = [UIColor.white.cgColor, UIColor.black.cgColor]
+        
+        gradient.colors = [colorTop, colorBottom]
         UINavigationBar.appearance().setBackgroundImage(self.image(fromLayer: gradient), for: .default)
-//        navigationBar.setBackgroundImage(UIImage(), for: .default)
-//        navigationBar.backgroundColor = UIColor.black
-////            ColorManager.sharedInstance.questionsNavigationBarBGColor()
-//        navigationBar.shadowImage = UIImage()
+        navigationBar.shadowImage = UIImage()
     }
     
     func saveButtonTapped(sender: UIBarButtonItem) {
