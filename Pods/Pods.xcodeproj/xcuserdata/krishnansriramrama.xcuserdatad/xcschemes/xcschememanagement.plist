@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>AWSCore.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>AWSDynamoDB.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>AWSMobileAnalytics.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Pods-AgentSecurityCheck.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>51EF069DEC7A3423574498AF89162450</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5ACFCBB5C36270A9DF9A2D2D11708867</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>73E20D8917BB5388CF2326338031E5AF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>764BF5F8A7793010994AF3D12E8FB7BF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

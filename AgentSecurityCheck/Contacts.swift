@@ -18,6 +18,8 @@ import AWSDynamoDB
 class Contacts: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     var _emailId: String?
+    var _score: String?
+    var _status: String?
     
     class func dynamoDBTableName() -> String {
 
@@ -32,6 +34,8 @@ class Contacts: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     override class func jsonKeyPathsByPropertyKey() -> [AnyHashable: Any] {
         return [
                "_emailId" : "email_id",
+               "_score":"score",
+               "_status": "status"
         ]
     }
 }

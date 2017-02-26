@@ -13,7 +13,12 @@ class ResultsViewController: UIViewController {
     
     @IBOutlet weak var topTachometer: SFGaugeView!
     var percentageValue: Int!
+    var score: String!
     var actionToEnable: UIAlertAction?
+    @IBOutlet weak var lowLabelTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var highLabelTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var highLabelBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var lowLabelBottomConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +41,11 @@ class ResultsViewController: UIViewController {
                                              action: #selector(resetButtonTapped(sender:)))
         
         self.navigationItem.rightBarButtonItem = rightBarButton
+        self.navigationItem.hidesBackButton = true
+        self.lowLabelTrailingConstraint.constant = -70
+        self.lowLabelBottomConstraint.constant = -30
+        self.highLabelTrailingConstraint.constant = -60
+        self.highLabelBottomConstraint.constant = -30
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,7 +65,10 @@ class ResultsViewController: UIViewController {
             
             let firstTextField = alertController.textFields![0] as UITextField
             let contactsTable = ContactsTable()
-            contactsTable.insertEMailItemWithCompletionHandler(email: firstTextField.text!, completionHandler: { (error) in
+            contactsTable.insertEMailItemWithCompletionHandler(email: firstTextField.text!,
+                                                               score: self.score,
+                                                               status: "New",
+                                                               completionHandler: { (error) in
                 if error != nil {
                     debugPrint(error!.description)
                 } else {

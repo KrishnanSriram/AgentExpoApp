@@ -89,13 +89,16 @@ class ContactsTable: NSObject, Table {
         }
     }
     
-    func insertEMailItemWithCompletionHandler(email:String, completionHandler: @escaping (_ errors: [NSError]?) -> Void) {
+    func insertEMailItemWithCompletionHandler(email:String, score: String, status: String,
+                                              completionHandler: @escaping (_ errors: [NSError]?) -> Void) {
         let objectMapper = AWSDynamoDBObjectMapper.default()
         var errors: [NSError] = []
         let group: DispatchGroup = DispatchGroup()
         
         let item: Contacts = Contacts()
         item._emailId = email
+        item._status = status
+        item._score = score
         
         group.enter()
         
