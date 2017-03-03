@@ -48,6 +48,12 @@
 		CB12A3241E52A90F00FE9F0B /* AgentSecurityCheckItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB12A3231E52A90F00FE9F0B /* AgentSecurityCheckItem.swift */; };
 		CB12A3261E52AA5000FE9F0B /* AgentSecurityCheckItemDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB12A3251E52AA5000FE9F0B /* AgentSecurityCheckItemDetails.swift */; };
 		CB12A3281E52AA5C00FE9F0B /* AgentSecurityCheckItemDetailsChoices.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB12A3271E52AA5C00FE9F0B /* AgentSecurityCheckItemDetailsChoices.swift */; };
+		CB12A3291E6260C100FE9F0B /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 029F02601E5B58BE00E02186 /* AWSCore.framework */; };
+		CB12A32A1E6260C100FE9F0B /* AWSDynamoDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 029F02611E5B58BE00E02186 /* AWSDynamoDB.framework */; };
+		CB12A32B1E6260C100FE9F0B /* AWSMobileAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 029F02621E5B58BE00E02186 /* AWSMobileAnalytics.framework */; };
+		CB12A32D1E62614200FE9F0B /* AWSCore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 029F02601E5B58BE00E02186 /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CB12A32E1E62614200FE9F0B /* AWSDynamoDB.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 029F02611E5B58BE00E02186 /* AWSDynamoDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CB12A32F1E62614200FE9F0B /* AWSMobileAnalytics.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 029F02621E5B58BE00E02186 /* AWSMobileAnalytics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +85,18 @@
 				029F02641E5B58BE00E02186 /* AWSCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB12A32C1E62612C00FE9F0B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CB12A32D1E62614200FE9F0B /* AWSCore.framework in CopyFiles */,
+				CB12A32E1E62614200FE9F0B /* AWSDynamoDB.framework in CopyFiles */,
+				CB12A32F1E62614200FE9F0B /* AWSMobileAnalytics.framework in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -143,6 +161,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB12A3291E6260C100FE9F0B /* AWSCore.framework in Frameworks */,
+				CB12A32A1E6260C100FE9F0B /* AWSDynamoDB.framework in Frameworks */,
+				CB12A32B1E6260C100FE9F0B /* AWSMobileAnalytics.framework in Frameworks */,
 				029F02531E5B43CF00E02186 /* libz.tbd in Frameworks */,
 				029F02511E5B43C500E02186 /* libsqlite3.tbd in Frameworks */,
 				029F026B1E5B58FF00E02186 /* AWSMobileHubHelper.framework in Frameworks */,
@@ -339,6 +360,7 @@
 				6A3014942AB50B8767BFDCF4 /* [CP] Check Pods Manifest.lock */,
 				CB12A2961E43F0C300FE9F0B /* Sources */,
 				CB12A2971E43F0C300FE9F0B /* Frameworks */,
+				CB12A32C1E62612C00FE9F0B /* CopyFiles */,
 				CB12A2981E43F0C300FE9F0B /* Resources */,
 				B8BBFE40F68A122A77C78E5E /* [CP] Embed Pods Frameworks */,
 				B568D62F62B5FADA6CDC4C40 /* [CP] Copy Pods Resources */,

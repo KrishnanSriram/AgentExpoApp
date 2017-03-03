@@ -248,6 +248,7 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let resultsController = storyboard.instantiateViewController(withIdentifier: "result") as! ResultsViewController
             resultsController.percentageValue = percentage
+            resultsController.score = self.textScoreFrom(percentage: percentage)
             self.navigationController?.pushViewController(resultsController, animated: true)
         } else {
             let controller = UIAlertController(title: "Submit Response", message: "Please answer all questions to submit your response", preferredStyle: .alert)
@@ -259,6 +260,17 @@ class HomeViewController: UICollectionViewController, UIPopoverPresentationContr
     
     func canSubmit() -> Bool {
         return self.securityCheckItems.count == self.securityResonse.choices.count
+    }
+    
+    private func textScoreFrom(percentage: Int) -> String {
+        var text = "Low"
+        if percentage > 3 && percentage <= 7 {
+            text = "Medium"
+        } else if percentage > 7 {
+            text = "High"
+        }
+        
+        return text
     }
     
     private func calculateScoreFromSelectedChoices(selectedChoice: AgentSecurityResponse) -> Int {
