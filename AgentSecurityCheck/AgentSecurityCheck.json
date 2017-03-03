@@ -171,7 +171,7 @@
                                   "weight": "100"
                                   }, {
                                   "id": "B",
-                                  "choice": "We provide quarterly awareness training and information to our staff.",
+                                  "choice": "We provide awareness information or training but not both.",
                                   "weight": "10"
                                   }, {
                                   "id": "C",
