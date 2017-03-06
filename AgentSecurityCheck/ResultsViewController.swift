@@ -58,6 +58,7 @@ class ResultsViewController: UIViewController {
     }
     
     @IBAction func subscribeButtonTapped(sender: UIButton) {
+        
         let alertController = UIAlertController(title: "Email ID for subscription",
                                                 message: "Please enter your email ID", preferredStyle: .alert)
         let saveAction = UIAlertAction(title: "Notify", style: .default, handler: {
